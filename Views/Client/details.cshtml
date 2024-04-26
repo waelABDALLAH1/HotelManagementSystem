@@ -1,0 +1,44 @@
+﻿@model hotelManagementSystem20.models.client
+
+@{
+    ViewBag.Title = "Détails du client";
+}
+
+<h2>Détails du client</h2>
+
+<div>
+    <h4>Client</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.first_name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.first_name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.last_name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.last_name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.phone_no)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.phone_no)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.address)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.address)
+        </dd>
+        <!-- Ajoutez des champs similaires pour les autres propriétés du client -->
+    </dl>
+</div>
+
+<p>
+    @Html.ActionLink("Modifier", "Edit", new { id = Model.client_id }) |
+    @Html.ActionLink("Retour à la liste", "Index")
+</p>

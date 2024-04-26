@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace hotelManagementSystem20.Models
+namespace hotelManagementSystem20.models
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class HotelManagementSystemEntities : DbContext
+    public partial class HotelManagementSystemEntities4 : DbContext
     {
-        public HotelManagementSystemEntities()
-            : base("name=HotelManagementSystemEntities")
+        public HotelManagementSystemEntities4()
+            : base("name=HotelManagementSystemEntities4")
         {
         }
     
@@ -25,6 +25,9 @@ namespace hotelManagementSystem20.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<client> client { get; set; }
+        public virtual DbSet<Reservation> Reservation { get; set; }
+        public virtual DbSet<room> room { get; set; }
         public virtual DbSet<users> users { get; set; }
     }
 }

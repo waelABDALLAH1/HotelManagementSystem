@@ -5,39 +5,226 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="HotelManagementSystemModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="client">
+          <Key>
+            <PropertyRef Name="client_id" />
+          </Key>
+          <Property Name="client_id" Type="int" Nullable="false" />
+          <Property Name="first_name" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="last_name" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="phone_no" Type="int" Nullable="false" />
+          <Property Name="address" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Reservation">
+          <Key>
+            <PropertyRef Name="Reservation_Id" />
+          </Key>
+          <Property Name="Reservation_Id" Type="int" Nullable="false" />
+          <Property Name="client_id" Type="int" Nullable="false" />
+          <Property Name="room_id" Type="int" Nullable="false" />
+          <Property Name="DateDepart" Type="date" Nullable="false" />
+          <Property Name="DateArrivee" Type="date" Nullable="false" />
+          <Property Name="DateReservation" Type="date" Nullable="false" />
+          <Property Name="nombreChambres" Type="int" Nullable="false" />
+          <Property Name="prixTotale" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="room">
+          <Key>
+            <PropertyRef Name="room_id" />
+          </Key>
+          <Property Name="room_id" Type="int" Nullable="false" />
+          <Property Name="room_no" Type="int" Nullable="false" />
+          <Property Name="room_type" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="room_phone" Type="int" />
+          <Property Name="availability" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="price" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="users">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id" Type="int" Nullable="false" />
           <Property Name="Username" Type="varchar" MaxLength="20" />
           <Property Name="Password" Type="varchar" MaxLength="20" />
         </EntityType>
+        <Association Name="FK_Reservation_Client">
+          <End Role="client" Type="Self.client" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Reservation" Type="Self.Reservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="client">
+              <PropertyRef Name="client_id" />
+            </Principal>
+            <Dependent Role="Reservation">
+              <PropertyRef Name="client_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reservation_Room">
+          <End Role="room" Type="Self.room" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Reservation" Type="Self.Reservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="room">
+              <PropertyRef Name="room_id" />
+            </Principal>
+            <Dependent Role="Reservation">
+              <PropertyRef Name="room_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="HotelManagementSystemModelStoreContainer">
+          <EntitySet Name="client" EntityType="Self.client" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Reservation" EntityType="Self.Reservation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="room" EntityType="Self.room" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Reservation_Client" Association="Self.FK_Reservation_Client">
+            <End Role="client" EntitySet="client" />
+            <End Role="Reservation" EntitySet="Reservation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reservation_Room" Association="Self.FK_Reservation_Room">
+            <End Role="room" EntitySet="room" />
+            <End Role="Reservation" EntitySet="Reservation" />
+          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="HotelManagementSystemModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="client">
+          <Key>
+            <PropertyRef Name="client_id" />
+          </Key>
+          <Property Name="client_id" Type="Int32" Nullable="false" />
+          <Property Name="first_name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="last_name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="phone_no" Type="Int32" Nullable="false" />
+          <Property Name="address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Reservation" Relationship="Self.FK_Reservation_Client" FromRole="client" ToRole="Reservation" />
+        </EntityType>
+        <EntityType Name="Reservation">
+          <Key>
+            <PropertyRef Name="Reservation_Id" />
+          </Key>
+          <Property Name="Reservation_Id" Type="Int32" Nullable="false" />
+          <Property Name="client_id" Type="Int32" Nullable="false" />
+          <Property Name="room_id" Type="Int32" Nullable="false" />
+          <Property Name="DateDepart" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="DateArrivee" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="DateReservation" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="nombreChambres" Type="Int32" Nullable="false" />
+          <Property Name="prixTotale" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <NavigationProperty Name="client" Relationship="Self.FK_Reservation_Client" FromRole="Reservation" ToRole="client" />
+          <NavigationProperty Name="room" Relationship="Self.FK_Reservation_Room" FromRole="Reservation" ToRole="room" />
+        </EntityType>
+        <EntityType Name="room">
+          <Key>
+            <PropertyRef Name="room_id" />
+          </Key>
+          <Property Name="room_id" Type="Int32" Nullable="false" />
+          <Property Name="room_no" Type="Int32" Nullable="false" />
+          <Property Name="room_type" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="room_phone" Type="Int32" />
+          <Property Name="availability" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="price" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Reservation" Relationship="Self.FK_Reservation_Room" FromRole="room" ToRole="Reservation" />
+        </EntityType>
         <EntityType Name="users">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="Int32" Nullable="false" />
           <Property Name="Username" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityContainer Name="HotelManagementSystemEntities" annotation:LazyLoadingEnabled="true">
+        <Association Name="FK_Reservation_Client">
+          <End Role="client" Type="Self.client" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Reservation" Type="Self.Reservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="client">
+              <PropertyRef Name="client_id" />
+            </Principal>
+            <Dependent Role="Reservation">
+              <PropertyRef Name="client_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reservation_Room">
+          <End Role="room" Type="Self.room" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Reservation" Type="Self.Reservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="room">
+              <PropertyRef Name="room_id" />
+            </Principal>
+            <Dependent Role="Reservation">
+              <PropertyRef Name="room_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="HotelManagementSystemEntities4" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="client" EntityType="Self.client" />
+          <EntitySet Name="Reservation" EntityType="Self.Reservation" />
+          <EntitySet Name="room" EntityType="Self.room" />
           <EntitySet Name="users" EntityType="Self.users" />
+          <AssociationSet Name="FK_Reservation_Client" Association="Self.FK_Reservation_Client">
+            <End Role="client" EntitySet="client" />
+            <End Role="Reservation" EntitySet="Reservation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reservation_Room" Association="Self.FK_Reservation_Room">
+            <End Role="room" EntitySet="room" />
+            <End Role="Reservation" EntitySet="Reservation" />
+          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="HotelManagementSystemModelStoreContainer" CdmEntityContainer="HotelManagementSystemEntities">
+        <EntityContainerMapping StorageEntityContainer="HotelManagementSystemModelStoreContainer" CdmEntityContainer="HotelManagementSystemEntities4">
+          <EntitySetMapping Name="client">
+            <EntityTypeMapping TypeName="HotelManagementSystemModel.client">
+              <MappingFragment StoreEntitySet="client">
+                <ScalarProperty Name="client_id" ColumnName="client_id" />
+                <ScalarProperty Name="first_name" ColumnName="first_name" />
+                <ScalarProperty Name="last_name" ColumnName="last_name" />
+                <ScalarProperty Name="phone_no" ColumnName="phone_no" />
+                <ScalarProperty Name="address" ColumnName="address" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reservation">
+            <EntityTypeMapping TypeName="HotelManagementSystemModel.Reservation">
+              <MappingFragment StoreEntitySet="Reservation">
+                <ScalarProperty Name="Reservation_Id" ColumnName="Reservation_Id" />
+                <ScalarProperty Name="client_id" ColumnName="client_id" />
+                <ScalarProperty Name="room_id" ColumnName="room_id" />
+                <ScalarProperty Name="DateDepart" ColumnName="DateDepart" />
+                <ScalarProperty Name="DateArrivee" ColumnName="DateArrivee" />
+                <ScalarProperty Name="DateReservation" ColumnName="DateReservation" />
+                <ScalarProperty Name="nombreChambres" ColumnName="nombreChambres" />
+                <ScalarProperty Name="prixTotale" ColumnName="prixTotale" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="room">
+            <EntityTypeMapping TypeName="HotelManagementSystemModel.room">
+              <MappingFragment StoreEntitySet="room">
+                <ScalarProperty Name="room_id" ColumnName="room_id" />
+                <ScalarProperty Name="room_no" ColumnName="room_no" />
+                <ScalarProperty Name="room_type" ColumnName="room_type" />
+                <ScalarProperty Name="room_phone" ColumnName="room_phone" />
+                <ScalarProperty Name="availability" ColumnName="availability" />
+                <ScalarProperty Name="price" ColumnName="price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="users">
             <EntityTypeMapping TypeName="HotelManagementSystemModel.users">
               <MappingFragment StoreEntitySet="users">
