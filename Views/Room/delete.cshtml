@@ -1,0 +1,23 @@
+﻿
+@model hotelManagementSystem20.models.room
+
+@{
+    ViewBag.Title = "Supprimer la chambre";
+}
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Supprimer la chambre</h2>
+
+<div>
+    <h4>Êtes-vous sûr de vouloir supprimer cette chambre ?</h4>
+    <h3>@Model.room_no</h3>
+    <div>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <input type="submit" value="Supprimer" class="btn btn-danger" />
+            @Html.ActionLink("Annuler", "Index", null, new { @class = "btn btn-default" })
+        }
+    </div>
+</div>

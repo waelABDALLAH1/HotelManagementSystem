@@ -168,6 +168,9 @@
     <Content Include="Views\Client\delete.cshtml" />
     <Content Include="Views\Room\index.cshtml" />
     <Content Include="Views\Room\create.cshtml" />
+    <Content Include="Views\Room\details.cshtml" />
+    <Content Include="Views\Room\edit.cshtml" />
+    <Content Include="Views\Room\delete.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
