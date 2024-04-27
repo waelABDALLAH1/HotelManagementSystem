@@ -3,20 +3,44 @@
   "WorkspaceRootPath": "C:\\Users\\USER\\source\\repos\\hotelManagementSystem20\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DBD8EE76-F8B1-4655-9AF9-BFF7D931AA54}|hotelManagementSystem20.csproj|c:\\users\\user\\source\\repos\\hotelmanagementsystem20\\views\\client\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{DBD8EE76-F8B1-4655-9AF9-BFF7D931AA54}|hotelManagementSystem20.csproj|solutionrelative:views\\client\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{DBD8EE76-F8B1-4655-9AF9-BFF7D931AA54}|hotelManagementSystem20.csproj|C:\\Users\\USER\\source\\repos\\hotelManagementSystem20\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DBD8EE76-F8B1-4655-9AF9-BFF7D931AA54}|hotelManagementSystem20.csproj|solutionrelative:views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DBD8EE76-F8B1-4655-9AF9-BFF7D931AA54}|hotelManagementSystem20.csproj|c:\\users\\user\\source\\repos\\hotelmanagementsystem20\\views\\client\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{DBD8EE76-F8B1-4655-9AF9-BFF7D931AA54}|hotelManagementSystem20.csproj|solutionrelative:views\\client\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{DBD8EE76-F8B1-4655-9AF9-BFF7D931AA54}|hotelManagementSystem20.csproj|c:\\users\\user\\source\\repos\\hotelmanagementsystem20\\views\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{DBD8EE76-F8B1-4655-9AF9-BFF7D931AA54}|hotelManagementSystem20.csproj|solutionrelative:views\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DBD8EE76-F8B1-4655-9AF9-BFF7D931AA54}|hotelManagementSystem20.csproj|c:\\users\\user\\source\\repos\\hotelmanagementsystem20\\views\\client\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{DBD8EE76-F8B1-4655-9AF9-BFF7D931AA54}|hotelManagementSystem20.csproj|c:\\users\\user\\source\\repos\\hotelmanagementsystem20\\global.asax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DBD8EE76-F8B1-4655-9AF9-BFF7D931AA54}|hotelManagementSystem20.csproj|solutionrelative:global.asax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DBD8EE76-F8B1-4655-9AF9-BFF7D931AA54}|hotelManagementSystem20.csproj|c:\\users\\user\\source\\repos\\hotelmanagementsystem20\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{DBD8EE76-F8B1-4655-9AF9-BFF7D931AA54}|hotelManagementSystem20.csproj|solutionrelative:packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DBD8EE76-F8B1-4655-9AF9-BFF7D931AA54}|hotelManagementSystem20.csproj|c:\\users\\user\\source\\repos\\hotelmanagementsystem20\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{DBD8EE76-F8B1-4655-9AF9-BFF7D931AA54}|hotelManagementSystem20.csproj|solutionrelative:web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DBD8EE76-F8B1-4655-9AF9-BFF7D931AA54}|hotelManagementSystem20.csproj|C:\\Users\\USER\\source\\repos\\hotelManagementSystem20\\views\\client\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DBD8EE76-F8B1-4655-9AF9-BFF7D931AA54}|hotelManagementSystem20.csproj|solutionrelative:views\\client\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DBD8EE76-F8B1-4655-9AF9-BFF7D931AA54}|hotelManagementSystem20.csproj|C:\\Users\\USER\\source\\repos\\hotelManagementSystem20\\views\\client\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DBD8EE76-F8B1-4655-9AF9-BFF7D931AA54}|hotelManagementSystem20.csproj|solutionrelative:views\\client\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DBD8EE76-F8B1-4655-9AF9-BFF7D931AA54}|hotelManagementSystem20.csproj|C:\\Users\\USER\\source\\repos\\hotelManagementSystem20\\views\\client\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{DBD8EE76-F8B1-4655-9AF9-BFF7D931AA54}|hotelManagementSystem20.csproj|solutionrelative:views\\client\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DBD8EE76-F8B1-4655-9AF9-BFF7D931AA54}|hotelManagementSystem20.csproj|c:\\users\\user\\source\\repos\\hotelmanagementsystem20\\views\\client\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{DBD8EE76-F8B1-4655-9AF9-BFF7D931AA54}|hotelManagementSystem20.csproj|solutionrelative:views\\client\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{DBD8EE76-F8B1-4655-9AF9-BFF7D931AA54}|hotelManagementSystem20.csproj|C:\\Users\\USER\\source\\repos\\hotelManagementSystem20\\views\\client\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DBD8EE76-F8B1-4655-9AF9-BFF7D931AA54}|hotelManagementSystem20.csproj|solutionrelative:views\\client\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DBD8EE76-F8B1-4655-9AF9-BFF7D931AA54}|hotelManagementSystem20.csproj|c:\\users\\user\\source\\repos\\hotelmanagementsystem20\\views\\client\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DBD8EE76-F8B1-4655-9AF9-BFF7D931AA54}|hotelManagementSystem20.csproj|solutionrelative:views\\client\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DBD8EE76-F8B1-4655-9AF9-BFF7D931AA54}|hotelManagementSystem20.csproj|C:\\Users\\USER\\source\\repos\\hotelManagementSystem20\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -27,23 +51,19 @@
       "RelativeMoniker": "D:0:0:{DBD8EE76-F8B1-4655-9AF9-BFF7D931AA54}|hotelManagementSystem20.csproj|solutionrelative:views\\home\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DBD8EE76-F8B1-4655-9AF9-BFF7D931AA54}|hotelManagementSystem20.csproj|c:\\users\\user\\source\\repos\\hotelmanagementsystem20\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{DBD8EE76-F8B1-4655-9AF9-BFF7D931AA54}|hotelManagementSystem20.csproj|solutionrelative:views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DBD8EE76-F8B1-4655-9AF9-BFF7D931AA54}|hotelManagementSystem20.csproj|C:\\Users\\USER\\source\\repos\\hotelManagementSystem20\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{DBD8EE76-F8B1-4655-9AF9-BFF7D931AA54}|hotelManagementSystem20.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{DBD8EE76-F8B1-4655-9AF9-BFF7D931AA54}|hotelManagementSystem20.csproj|c:\\users\\user\\source\\repos\\hotelmanagementsystem20\\controllers\\clientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DBD8EE76-F8B1-4655-9AF9-BFF7D931AA54}|hotelManagementSystem20.csproj|solutionrelative:controllers\\clientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DBD8EE76-F8B1-4655-9AF9-BFF7D931AA54}|hotelManagementSystem20.csproj|C:\\Users\\USER\\source\\repos\\hotelManagementSystem20\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DBD8EE76-F8B1-4655-9AF9-BFF7D931AA54}|hotelManagementSystem20.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DBD8EE76-F8B1-4655-9AF9-BFF7D931AA54}|hotelManagementSystem20.csproj|c:\\users\\user\\source\\repos\\hotelmanagementsystem20\\views\\client\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{DBD8EE76-F8B1-4655-9AF9-BFF7D931AA54}|hotelManagementSystem20.csproj|solutionrelative:views\\client\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{DBD8EE76-F8B1-4655-9AF9-BFF7D931AA54}|hotelManagementSystem20.csproj|C:\\Users\\USER\\source\\repos\\hotelManagementSystem20\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DBD8EE76-F8B1-4655-9AF9-BFF7D931AA54}|hotelManagementSystem20.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DBD8EE76-F8B1-4655-9AF9-BFF7D931AA54}|hotelManagementSystem20.csproj|c:\\users\\user\\source\\repos\\hotelmanagementsystem20\\models\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
+      "AbsoluteMoniker": "D:0:0:{DBD8EE76-F8B1-4655-9AF9-BFF7D931AA54}|hotelManagementSystem20.csproj|C:\\Users\\USER\\source\\repos\\hotelManagementSystem20\\models\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
       "RelativeMoniker": "D:0:0:{DBD8EE76-F8B1-4655-9AF9-BFF7D931AA54}|hotelManagementSystem20.csproj|solutionrelative:models\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
     },
     {
@@ -66,8 +86,12 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 8,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
@@ -75,25 +99,77 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "web.config",
+              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\hotelManagementSystem20\\Views\\web.config",
+              "RelativeDocumentMoniker": "Views\\web.config",
+              "ToolTip": "C:\\Users\\USER\\source\\repos\\hotelManagementSystem20\\Views\\web.config",
+              "RelativeToolTip": "Views\\web.config",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-04-27T11:12:43.187Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Global.asax.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\hotelManagementSystem20\\Global.asax.cs",
+              "RelativeDocumentMoniker": "Global.asax.cs",
+              "ToolTip": "C:\\Users\\USER\\source\\repos\\hotelManagementSystem20\\Global.asax.cs",
+              "RelativeToolTip": "Global.asax.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-27T11:12:35.001Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "packages.config",
+              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\hotelManagementSystem20\\packages.config",
+              "RelativeDocumentMoniker": "packages.config",
+              "ToolTip": "C:\\Users\\USER\\source\\repos\\hotelManagementSystem20\\packages.config",
+              "RelativeToolTip": "packages.config",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-04-27T11:09:49.307Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "create.cshtml",
+              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\hotelManagementSystem20\\Views\\Client\\create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Client\\create.cshtml",
+              "ToolTip": "C:\\Users\\USER\\source\\repos\\hotelManagementSystem20\\Views\\Client\\create.cshtml",
+              "RelativeToolTip": "Views\\Client\\create.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-26T20:09:22.463Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "delete.cshtml",
               "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\hotelManagementSystem20\\Views\\Client\\delete.cshtml",
               "RelativeDocumentMoniker": "Views\\Client\\delete.cshtml",
               "ToolTip": "C:\\Users\\USER\\source\\repos\\hotelManagementSystem20\\Views\\Client\\delete.cshtml",
               "RelativeToolTip": "Views\\Client\\delete.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAcAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-04-26T20:22:31.192Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "details.cshtml",
               "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\hotelManagementSystem20\\Views\\Client\\details.cshtml",
               "RelativeDocumentMoniker": "Views\\Client\\details.cshtml",
               "ToolTip": "C:\\Users\\USER\\source\\repos\\hotelManagementSystem20\\Views\\Client\\details.cshtml",
               "RelativeToolTip": "Views\\Client\\details.cshtml",
-              "ViewState": "AQIAABEAAAAAAAAAAAAQwB8AAAA4AAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-04-26T20:21:43.392Z",
               "EditorCaption": ""
@@ -101,19 +177,97 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "create.cshtml",
-              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\hotelManagementSystem20\\Views\\Client\\create.cshtml",
-              "RelativeDocumentMoniker": "Views\\Client\\create.cshtml",
-              "ToolTip": "C:\\Users\\USER\\source\\repos\\hotelManagementSystem20\\Views\\Client\\create.cshtml",
-              "RelativeToolTip": "Views\\Client\\create.cshtml",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAsAAAAAAAAA",
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\hotelManagementSystem20\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "Views\\_ViewStart.cshtml",
+              "ToolTip": "C:\\Users\\USER\\source\\repos\\hotelManagementSystem20\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "Views\\_ViewStart.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-26T20:09:22.463Z",
+              "WhenOpened": "2024-04-26T20:14:39.253Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
+              "Title": "Dashboard.cshtml",
+              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\hotelManagementSystem20\\Views\\Home\\Dashboard.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Dashboard.cshtml",
+              "ToolTip": "C:\\Users\\USER\\source\\repos\\hotelManagementSystem20\\Views\\Home\\Dashboard.cshtml",
+              "RelativeToolTip": "Views\\Home\\Dashboard.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-23T19:51:56.563Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Web.config",
+              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\hotelManagementSystem20\\Web.config",
+              "RelativeDocumentMoniker": "Web.config",
+              "ToolTip": "C:\\Users\\USER\\source\\repos\\hotelManagementSystem20\\Web.config",
+              "RelativeToolTip": "Web.config",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADgAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-04-27T11:03:39.617Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\hotelManagementSystem20\\Views\\Client\\edit.cshtml",
+              "RelativeDocumentMoniker": "Views\\Client\\edit.cshtml",
+              "ToolTip": "C:\\Users\\USER\\source\\repos\\hotelManagementSystem20\\Views\\Client\\edit.cshtml",
+              "RelativeToolTip": "Views\\Client\\edit.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-26T20:09:51.541Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\hotelManagementSystem20\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\USER\\source\\repos\\hotelManagementSystem20\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-23T20:06:28.015Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "index.cshtml",
+              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\hotelManagementSystem20\\Views\\Client\\index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Client\\index.cshtml",
+              "ToolTip": "C:\\Users\\USER\\source\\repos\\hotelManagementSystem20\\Views\\Client\\index.cshtml",
+              "RelativeToolTip": "Views\\Client\\index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-26T20:08:59.125Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\hotelManagementSystem20\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\USER\\source\\repos\\hotelManagementSystem20\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAuwCwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-23T19:39:26.966Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
               "Title": "AssemblyInfo.cs",
               "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\hotelManagementSystem20\\Properties\\AssemblyInfo.cs",
               "RelativeDocumentMoniker": "Properties\\AssemblyInfo.cs",
@@ -126,46 +280,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\hotelManagementSystem20\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\USER\\source\\repos\\hotelManagementSystem20\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAABgAAAAAAAAAAAAQwDMAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-23T20:06:28.015Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\hotelManagementSystem20\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\USER\\source\\repos\\hotelManagementSystem20\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "Controllers\\HomeController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwCwAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-23T19:39:26.966Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Dashboard.cshtml",
-              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\hotelManagementSystem20\\Views\\Home\\Dashboard.cshtml",
-              "RelativeDocumentMoniker": "Views\\Home\\Dashboard.cshtml",
-              "ToolTip": "C:\\Users\\USER\\source\\repos\\hotelManagementSystem20\\Views\\Home\\Dashboard.cshtml",
-              "RelativeToolTip": "Views\\Home\\Dashboard.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-23T19:51:56.563Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 12,
+              "Title": "ClientController.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\hotelManagementSystem20\\Controllers\\ClientController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ClientController.cs",
+              "ToolTip": "C:\\Users\\USER\\source\\repos\\hotelManagementSystem20\\Controllers\\ClientController.cs",
+              "RelativeToolTip": "Controllers\\ClientController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-27T11:03:13.729Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
               "Title": "RouteConfig.cs",
               "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\hotelManagementSystem20\\App_Start\\RouteConfig.cs",
               "RelativeDocumentMoniker": "App_Start\\RouteConfig.cs",
@@ -178,7 +306,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 18,
               "Title": "Site.css",
               "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\hotelManagementSystem20\\Content\\Site.css",
               "RelativeDocumentMoniker": "Content\\Site.css",
@@ -191,33 +319,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "edit.cshtml",
-              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\hotelManagementSystem20\\Views\\Client\\edit.cshtml",
-              "RelativeDocumentMoniker": "Views\\Client\\edit.cshtml",
-              "ToolTip": "C:\\Users\\USER\\source\\repos\\hotelManagementSystem20\\Views\\Client\\edit.cshtml",
-              "RelativeToolTip": "Views\\Client\\edit.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAhAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-26T20:09:51.541Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "_ViewStart.cshtml",
-              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\hotelManagementSystem20\\Views\\_ViewStart.cshtml",
-              "RelativeDocumentMoniker": "Views\\_ViewStart.cshtml",
-              "ToolTip": "C:\\Users\\USER\\source\\repos\\hotelManagementSystem20\\Views\\_ViewStart.cshtml",
-              "RelativeToolTip": "Views\\_ViewStart.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-26T20:14:39.253Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 14,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\hotelManagementSystem20\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
@@ -230,20 +332,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "index.cshtml",
-              "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\hotelManagementSystem20\\Views\\Client\\index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Client\\index.cshtml",
-              "ToolTip": "C:\\Users\\USER\\source\\repos\\hotelManagementSystem20\\Views\\Client\\index.cshtml",
-              "RelativeToolTip": "Views\\Client\\index.cshtml",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAABcAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-26T20:08:59.125Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 15,
               "Title": "Model1.edmx [Diagram1]",
               "DocumentMoniker": "C:\\Users\\USER\\source\\repos\\hotelManagementSystem20\\models\\Model1.edmx",
               "RelativeDocumentMoniker": "models\\Model1.edmx",
