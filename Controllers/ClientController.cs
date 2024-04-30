@@ -41,14 +41,16 @@ namespace hotelManagementSystem20.Controllers
         {
             if (ModelState.IsValid)
             {
-                
+
+
                 var nextValQuery = "SELECT NEXT VALUE FOR client_seq;";
                 var nextVal = db.Database.SqlQuery<long>(nextValQuery).FirstOrDefault();
 
-               
+
                 client.client_id = (int)nextVal;
 
-               
+
+
                 db.client.Add(client);
                 db.SaveChanges();
                 return RedirectToAction("Index");
