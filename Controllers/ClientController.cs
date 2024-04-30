@@ -57,6 +57,7 @@ namespace hotelManagementSystem20.Controllers
             return View(client);
         }
 
+
         // GET: Client/Edit/5
         public ActionResult Edit(int id)
         {

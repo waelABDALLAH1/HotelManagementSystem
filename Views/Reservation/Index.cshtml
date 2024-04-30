@@ -1,0 +1,45 @@
+﻿@model IEnumerable<hotelManagementSystem20.models.Reservation>
+
+@{
+    ViewBag.Title = "Liste des reservations";
+}
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Liste des reservations</h2>
+
+<p>
+    @Html.ActionLink("Créer une nouvelle réservation", "Create")
+</p>
+
+<table class="table">
+    <tr>
+        <th>Client ID</th>
+        <th>Room ID</th>
+        <th>Départ Date</th>
+        <th>Fin Date</th>
+        <th>Reservation Date</th>
+        <th>Nombre de rooms</th>
+        <th>Prix Total</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.client_id</td>
+            <td>@item.room_id</td>
+            <td>@item.DateDepart</td>
+            <td>@item.DateArrivee</td>
+            <td>@item.DateReservation</td>
+            <td>@item.nombreChambres</td>
+            <td>@item.prixTotale</td>
+            <td>
+                @Html.ActionLink("Détails", "Details", new { id = item.client_id }) |
+                @Html.ActionLink("Modifier", "Edit", new { id = item.client_id }) |
+                @Html.ActionLink("Supprimer", "Delete", new { id = item.client_id })
+            </td>
+        </tr>
+    }
+</table>
+
+
