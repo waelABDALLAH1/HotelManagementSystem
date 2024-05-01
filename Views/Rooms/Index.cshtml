@@ -1,0 +1,40 @@
+﻿@model IEnumerable<hotelManagementSystem20.models.room>
+
+@{
+    ViewBag.Title = "Liste des chambres";
+}
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Liste des chambres</h2>
+
+<p>
+    @Html.ActionLink("Ajouter une nouvelle chambre", "Create")
+</p>
+
+<table class="table">
+    <tr>
+        <th>Numéro de chambre</th>
+        <th>Type</th>
+        <th>Téléphone</th>
+        <th>Disponibilité</th>
+        <th>Prix</th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.room_no</td>
+            <td>@item.room_type</td>
+            <td>@item.room_phone</td>
+            <td>@item.availability</td>
+            <td>@item.price</td>
+            <td>
+                @Html.ActionLink("Détails", "Details", new { id = item.room_id }) |
+                @Html.ActionLink("Modifier", "Edit", new { id = item.room_id }) |
+                @Html.ActionLink("Supprimer", "Delete", new { id = item.room_id })
+            </td>
+        </tr>
+    }
+</table>

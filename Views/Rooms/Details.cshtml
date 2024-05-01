@@ -1,0 +1,38 @@
+﻿@model hotelManagementSystem20.models.room
+
+@{
+    ViewBag.Title = "Détails de la chambre";
+}
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Détails de la chambre</h2>
+
+<div>
+    <h4>Chambre</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.room_no) : @Html.DisplayFor(model => model.room_no)
+        </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.room_type) : @Html.DisplayFor(model => model.room_type)
+        </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.room_phone) : @Html.DisplayFor(model => model.room_phone)
+        </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.availability) : @Html.DisplayFor(model => model.availability)
+        </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.price) : @Html.DisplayFor(model => model.price)
+        </dt>
+
+    </dl>
+</div>
+
+<p>
+    @Html.ActionLink("Modifier", "Edit", new { id = Model.room_id }) |
+    @Html.ActionLink("Retour à la liste", "Index")
+</p>
