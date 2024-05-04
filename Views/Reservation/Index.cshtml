@@ -26,6 +26,7 @@
     @foreach (var item in Model)
     {
         <tr>
+            <td>@item.Reservation_Id</td>
             <td>@item.client_id</td>
             <td>@item.room_id</td>
             <td>@item.DateDepart</td>
@@ -34,9 +35,9 @@
             <td>@item.nombreChambres</td>
             <td>@item.prixTotale</td>
             <td>
-                @Html.ActionLink("Détails", "Details", new { id = item.client_id }) |
-                @Html.ActionLink("Modifier", "Edit", new { id = item.client_id }) |
-                @Html.ActionLink("Supprimer", "Delete", new { id = item.client_id })
+                @Html.ActionLink("Détails", "Details", new { id = item.Reservation_Id }) |
+                @Html.ActionLink("Modifier", "Edit", new { id = item.Reservation_Id }) |
+                @Html.ActionLink("Supprimer", "Delete", new { id = item.Reservation_Id })
             </td>
         </tr>
     }

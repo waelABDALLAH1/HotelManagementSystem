@@ -1,0 +1,24 @@
+﻿@model hotelManagementSystem20.models.Reservation
+
+@{
+    ViewBag.Title = "Supprimer la Reservation";
+}
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml"; // Specify the path to your shared layout
+}
+
+<h2>Supprimer la Reservation</h2>
+
+<div>
+    <h4>Êtes-vous sûr de vouloir supprimer cette Reservation ?</h4>
+    <h3>Reservation ID: @Model.Reservation_Id, Date de Reservation: @Model.DateReservation</h3>
+    <div>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <input type="submit" value="Supprimer" class="btn btn-danger" />
+            @Html.ActionLink("Annuler", "Index", null, new { @class = "btn btn-default" })
+        }
+    </div>
+</div>
+

@@ -114,11 +114,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ClientController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-
     <Compile Include="Controllers\ReservationController.cs" />
-
     <Compile Include="Controllers\RoomController.cs" />
-
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -170,15 +167,16 @@
     <Content Include="Views\Client\edit.cshtml" />
     <Content Include="Views\Client\details.cshtml" />
     <Content Include="Views\Client\delete.cshtml" />
-<<<<<<< HEAD
     <Content Include="Views\Reservation\Index.cshtml" />
-=======
     <Content Include="Views\Room\index.cshtml" />
     <Content Include="Views\Room\create.cshtml" />
     <Content Include="Views\Room\details.cshtml" />
     <Content Include="Views\Room\edit.cshtml" />
     <Content Include="Views\Room\delete.cshtml" />
->>>>>>> 30e875b8cd0a5de0e932be3d32cec47fb0fbe88e
+    <Content Include="Views\Reservation\Details.cshtml" />
+    <Content Include="Views\Reservation\Create.cshtml" />
+    <Content Include="Views\Reservation\Edit.cshtml" />
+    <Content Include="Views\Reservation\Delete.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
