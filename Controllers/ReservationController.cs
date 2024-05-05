@@ -45,9 +45,11 @@ namespace hotelManagementSystem20.Controllers
 
                 var nextValQuery = "SELECT NEXT VALUE FOR Reservation_seq;";
                 var nextVal = db.Database.SqlQuery<long>(nextValQuery).FirstOrDefault();
-
+                var dateQuery = "SELECT getDate();";
+                var date = db.Database.SqlQuery<DateTime>(dateQuery).FirstOrDefault();
 
                 reservation.Reservation_Id = (int)nextVal;
+                reservation.DateReservation = date;
 
 
                 db.Reservation.Add(reservation);
