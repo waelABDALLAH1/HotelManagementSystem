@@ -12,6 +12,21 @@ namespace hotelManagementSystem20.Controllers
     {
         private HotelManagementSystemEntities4 db = new HotelManagementSystemEntities4();
 
+        public RoomsController()
+        {
+            ViewBag.RoomTypes = new List<SelectListItem>
+            {
+                new SelectListItem { Value = "single", Text = "Chambre Simple" },
+                new SelectListItem { Value = "double", Text = "Chambre Double" },
+                new SelectListItem { Value = "suite", Text = "Suite" },
+                new SelectListItem { Value = "standard", Text = "Chambre Standard" },
+                new SelectListItem { Value = "deluxe", Text = "Chambre Deluxe" },
+                new SelectListItem { Value = "executive", Text = "Chambre Exécutive" },
+                new SelectListItem { Value = "penthouse", Text = "Penthouse" },
+                new SelectListItem { Value = "bungalow", Text = "Bungalow" },
+            };
+        }
+
         // GET: Rooms
         public ActionResult Index()
         {

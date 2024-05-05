@@ -33,7 +33,7 @@
     <Property Name="room_id" Type="Int32" Nullable="false" />
     <Property Name="room_no" Type="Int32" Nullable="false" />
     <Property Name="room_type" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="room_phone" Type="Int32" />
+    <Property Name="room_phone" Type="String" Nullable="true" MaxLength="20" Unicode="false" FixedLength="false" />
     <Property Name="availability" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="price" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Reservation" Relationship="Self.FK_Reservation_Room" FromRole="room" ToRole="Reservation" />

@@ -9,7 +9,7 @@
 
 <h2>Modifier la chambre</h2>
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("Edit", "Rooms", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
 
@@ -21,35 +21,35 @@
     <div class="form-group">
         @Html.LabelFor(model => model.room_no, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.room_no, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.EditorFor(model => model.room_no, new { htmlAttributes = new { @class = "form-control", required = "required", pattern = "[0-9]+", title = "Between 1 and 300" } })
             @Html.ValidationMessageFor(model => model.room_no, "", new { @class = "text-danger" })
         </div>
     </div>
     <div class="form-group">
         @Html.LabelFor(model => model.room_type, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.room_type, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.DropDownListFor(model => model.room_type, new SelectList(ViewBag.RoomTypes, "Value", "Text"), "Sélectionnez un type de chambre", new { @class = "form-control", required = "required" })
             @Html.ValidationMessageFor(model => model.room_type, "", new { @class = "text-danger" })
         </div>
     </div>
     <div class="form-group">
-        @Html.LabelFor(model => model.room_phone, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.room_phone, htmlAttributes: new { @class = "control-label col-md-2" }) (Optional)
         <div class="col-md-10">
-            @Html.EditorFor(model => model.room_phone, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.EditorFor(model => model.room_phone, new { htmlAttributes = new { @class = "form-control", pattern = "7[0-9]{7}", title= "The phone number must start with 7 and have 8 digits." } })
             @Html.ValidationMessageFor(model => model.room_phone, "", new { @class = "text-danger" })
         </div>
     </div>
     <div class="form-group">
         @Html.LabelFor(model => model.availability, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.availability, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.DropDownListFor(model => model.availability, new SelectList(new[] { "true", "false" }), "Select", new { @class = "form-control", required = "required" })
             @Html.ValidationMessageFor(model => model.availability, "", new { @class = "text-danger" })
         </div>
     </div>
     <div class="form-group">
         @Html.LabelFor(model => model.price, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.price, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.TextBoxFor(model => model.price, "{0:n0}", new { @class = "form-control", type = "number", min = "10", max = "1000", step = "10", required = "required" })
             @Html.ValidationMessageFor(model => model.price, "", new { @class = "text-danger" })
         </div>
     </div>

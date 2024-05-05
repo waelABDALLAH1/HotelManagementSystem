@@ -30,7 +30,7 @@
     <Property Name="room_id" Type="int" Nullable="false" />
     <Property Name="room_no" Type="int" Nullable="false" />
     <Property Name="room_type" Type="varchar" MaxLength="20" Nullable="false" />
-    <Property Name="room_phone" Type="int" />
+    <Property Name="room_phone" Type="varchar" MaxLength="20" />
     <Property Name="availability" Type="varchar" MaxLength="5" Nullable="false" />
     <Property Name="price" Type="int" Nullable="false" />
   </EntityType>
