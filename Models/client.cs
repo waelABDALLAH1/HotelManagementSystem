@@ -11,7 +11,8 @@ namespace hotelManagementSystem20.models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class client
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,9 +22,13 @@ namespace hotelManagementSystem20.models
         }
     
         public int client_id { get; set; }
+        [Required(ErrorMessage = "First name is required.")]
+        [StringLength(20, ErrorMessage = "First name must not exceed 20 characters.")]
         public string first_name { get; set; }
+        [Required(ErrorMessage = "Last name is required.")]
+        [StringLength(20, ErrorMessage = "Last name must not exceed 20 characters.")]
         public string last_name { get; set; }
-        public int phone_no { get; set; }
+        public string phone_no { get; set; }
         public string address { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

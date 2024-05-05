@@ -11,8 +11,7 @@ namespace hotelManagementSystem20.models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class room
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -22,16 +21,10 @@ namespace hotelManagementSystem20.models
         }
     
         public int room_id { get; set; }
-        [Required(ErrorMessage = "Room number field is required.")]
-        [Range(1, 300, ErrorMessage = "Room number must be between 1 and 300.")]
         public int room_no { get; set; }
-        [Required(ErrorMessage = "Room type field is required.")]
         public string room_type { get; set; }
-        [RegularExpression(@"^7[0-9]{7}$", ErrorMessage = "The phone number must start with 7 and have 8 digits.")]
         public string room_phone { get; set; }
-        [Required(ErrorMessage = "The availability field is required.")]
         public string availability { get; set; }
-        [Required(ErrorMessage = "The price field is required.")]
         public int price { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
