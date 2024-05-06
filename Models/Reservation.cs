@@ -12,10 +12,18 @@ namespace hotelManagementSystem20.models
     using System;
     using System.Collections.Generic;
     
-    public partial class users
+    public partial class Reservation
     {
-        public int id { get; set; }
-        public string Username { get; set; }
-        public string Password { get; set; }
+        public int Reservation_Id { get; set; }
+        public int client_id { get; set; }
+        public int room_id { get; set; }
+        public System.DateTime DateDepart { get; set; }
+        public System.DateTime DateArrivee { get; set; }
+        public System.DateTime DateReservation { get; set; }
+        public int nombreChambres { get; set; }
+        public decimal prixTotale { get; set; }
+    
+        public virtual client client { get; set; }
+        public virtual room room { get; set; }
     }
 }

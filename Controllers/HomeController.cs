@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using hotelManagementSystem20.Models;
+using hotelManagementSystem20.models;
 
 namespace hotelManagementSystem20.Controllers
 {
     public class HomeController : Controller
     {
-        HotelManagementSystemEntities db = new HotelManagementSystemEntities();
+        HotelManagementSystemEntities4 db = new HotelManagementSystemEntities4();
 
         // GET: Home
         public ActionResult Index()
@@ -42,5 +42,6 @@ namespace hotelManagementSystem20.Controllers
         {
             return View();
         }
+
     }
 }
