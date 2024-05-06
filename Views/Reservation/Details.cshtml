@@ -1,0 +1,53 @@
+﻿@model hotelManagementSystem20.models.Reservation
+@{
+    ViewBag.Title = "Details de Reservation";
+}
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Détails du Reservation</h2>
+
+
+<div>
+    <h4>Reservation</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Reservation_Id)
+        </dt>
+        <dd>
+            @Html.DisplayNameFor(model => model.Reservation_Id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.client_id)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.client_id)
+        </dd>
+        
+       
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateReservation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DateReservation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nombreChambres)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.nombreChambres)
+        </dd>
+
+       
+
+    </dl>
+</div>
+
+<p>
+    @Html.ActionLink("Modifier", "Edit", new { id = Model.Reservation_Id }) |
+    @Html.ActionLink("Retour à la liste", "Index")
+</p>

@@ -17,7 +17,7 @@ namespace hotelManagementSystem20.models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public room()
         {
-            this.Reservation = new HashSet<Reservation>();
+            this.ReservationDetail = new HashSet<ReservationDetail>();
         }
     
         public int room_id { get; set; }
@@ -28,6 +28,6 @@ namespace hotelManagementSystem20.models
         public int price { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Reservation> Reservation { get; set; }
+        public virtual ICollection<ReservationDetail> ReservationDetail { get; set; }
     }
 }
