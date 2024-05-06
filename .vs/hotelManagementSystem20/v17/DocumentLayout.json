@@ -5,10 +5,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{DBD8EE76-F8B1-4655-9AF9-BFF7D931AA54}|hotelManagementSystem20.csproj|c:\\users\\amine\\source\\repos\\hotelmanagementsystem\\controllers\\clientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DBD8EE76-F8B1-4655-9AF9-BFF7D931AA54}|hotelManagementSystem20.csproj|solutionrelative:controllers\\clientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DBD8EE76-F8B1-4655-9AF9-BFF7D931AA54}|hotelManagementSystem20.csproj|c:\\users\\amine\\source\\repos\\hotelmanagementsystem\\views\\client\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{DBD8EE76-F8B1-4655-9AF9-BFF7D931AA54}|hotelManagementSystem20.csproj|solutionrelative:views\\client\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -35,19 +31,6 @@
               "ViewState": "AQIAADwAAAAAAAAAAAAAABAAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-05T16:59:40.389Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "edit.cshtml",
-              "DocumentMoniker": "C:\\Users\\amine\\source\\repos\\HotelManagementSystem\\Views\\Client\\edit.cshtml",
-              "RelativeDocumentMoniker": "Views\\Client\\edit.cshtml",
-              "ToolTip": "C:\\Users\\amine\\source\\repos\\HotelManagementSystem\\Views\\Client\\edit.cshtml",
-              "RelativeToolTip": "Views\\Client\\edit.cshtml",
-              "ViewState": "AQIAABQAAAAAAAAAAAAQwCIAAAAcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-05T16:59:54.129Z",
               "EditorCaption": ""
             }
           ]
