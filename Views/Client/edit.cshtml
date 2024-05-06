@@ -89,29 +89,29 @@
         {
             @Html.AntiForgeryToken()
 
-            <div class="form-group">
-                <label class="control-label" for="first_name">Prénom</label>
-                @Html.EditorFor(model => model.first_name, new { htmlAttributes = new { @class = "form-control", id = "first_name" } })
-                @Html.ValidationMessageFor(model => model.first_name, "", new { @class = "text-danger" })
-            </div>
+    <div class="form-group">
+        <label class="control-label" for="first_name">Prénom</label>
+        @Html.EditorFor(model => model.first_name, new { htmlAttributes = new { @class = "form-control", required = "required", maxlength = "20", pattern = "[A-Za-z]+", placeholder = "e.g. John" } })
+        @Html.ValidationMessageFor(model => model.first_name, "", new { @class = "text-danger" })
+    </div>
 
-            <div class="form-group">
-                <label class="control-label" for="last_name">Nom</label>
-                @Html.EditorFor(model => model.last_name, new { htmlAttributes = new { @class = "form-control", id = "last_name" } })
-                @Html.ValidationMessageFor(model => model.last_name, "", new { @class = "text-danger" })
-            </div>
+    <div class="form-group">
+        <label class="control-label" for="last_name">Nom</label>
+        @Html.EditorFor(model => model.last_name, new { htmlAttributes = new { @class = "form-control", required = "required", maxlength = "20", pattern = "[A-Za-z]+", placeholder = "e.g. Doe" } })
+        @Html.ValidationMessageFor(model => model.last_name, "", new { @class = "text-danger" })
+    </div>
 
-            <div class="form-group">
-                <label class="control-label" for="phone_no">Téléphone</label>
-                @Html.EditorFor(model => model.phone_no, new { htmlAttributes = new { @class = "form-control", id = "phone_no" } })
-                @Html.ValidationMessageFor(model => model.phone_no, "", new { @class = "text-danger" })
-            </div>
+    <div class="form-group">
+        <label class="control-label" for="phone_no">Téléphone</label>
+        @Html.EditorFor(model => model.phone_no, new { htmlAttributes = new { @class = "form-control", required = "required", maxlength = "8", placeholder = "e.g. 55 555 555", pattern = "[5-9][0-9]{7}", title = "The phone number must start with a number between 5 and 9 and must have 8 digits." } })
+        @Html.ValidationMessageFor(model => model.phone_no, "", new { @class = "text-danger" })
+    </div>
 
-            <div class="form-group">
-                <label class="control-label" for="address">Adresse</label>
-                @Html.EditorFor(model => model.address, new { htmlAttributes = new { @class = "form-control", id = "address" } })
-                @Html.ValidationMessageFor(model => model.address, "", new { @class = "text-danger" })
-            </div>
+    <div class="form-group">
+        <label class="control-label" for="address">Adresse</label>
+        @Html.EditorFor(model => model.address, new { htmlAttributes = new { @class = "form-control", required = "required", maxlength = "100", autocomplete = "address-line1", placeholder = "e.g. 22 New York Street", pattern = "[a-zA-Z0-9 .,-]+" } })
+        @Html.ValidationMessageFor(model => model.address, "", new { @class = "text-danger" })
+    </div>
 
             <div class="form-group">
                 <input type="submit" value="Enregistrer" class="btn btn-primary" />
