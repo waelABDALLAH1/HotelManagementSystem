@@ -1,13 +1,13 @@
 ﻿@model hotelManagementSystem20.models.Reservation
 
 @{
-    ViewBag.Title = "Créer une nouvelle Reservation";
+    ViewBag.Title = "Créer une nouvelle réservation";
 }
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Créer une nouvelle Reservation</h2>
+<h2>Créer une nouvelle réservation</h2>
 
 @using (Html.BeginForm())
 {
@@ -46,7 +46,3 @@
         </div>
     </div>
 }
-
-<div>
-    @Html.ActionLink("Retour à la liste", "check", new {Model})
-</div>

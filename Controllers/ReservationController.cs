@@ -95,25 +95,46 @@ namespace hotelManagementSystem20.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(Reservation reservation)
         {
-            if (ModelState.IsValid)
+            // Initialisation d'une variable pour vérifier si le modèle est valide
+            bool isModelValid = ModelState.IsValid;
+
+            // Vérification supplémentaire des conditions
+            if (isModelValid)
             {
+                var existingClient = db.client.Find(reservation.client_id);
+                if (existingClient == null)
+                {
+                    // Le client n'existe pas, ajoutez une erreur au ModelState
+                    ModelState.AddModelError("client_id", "Le client avec l'ID fourni n'existe pas. Veuillez saisir un ID de client valide.");
+                    isModelValid = false; // Mettre à jour la valeur de la variable pour indiquer que le modèle n'est plus valide
+                }
+                if (reservation.dateDepart > reservation.dateArrivee || reservation.dateDepart < DateTime.Now)
+                {
+                    // Ajoutez une erreur si les dates ne sont pas valides
+                    ModelState.AddModelError("dateDepart", "Les dates de départ et d'arrivée semblent incorrectes. Veuillez saisir des dates valides.");
+                    isModelValid = false; // Mettre à jour la valeur de la variable pour indiquer que le modèle n'est plus valide
+                }
 
-                var nextValQuery = "SELECT NEXT VALUE FOR Reservation_seq;";
-                var nextVal = db.Database.SqlQuery<long>(nextValQuery).FirstOrDefault();
-                var dateQuery = "SELECT getDate();";
-                var date = db.Database.SqlQuery<DateTime>(dateQuery).FirstOrDefault();
+                if (isModelValid)
+                {
+                    var nextValQuery = "SELECT NEXT VALUE FOR Reservation_seq;";
+                    var nextVal = db.Database.SqlQuery<long>(nextValQuery).FirstOrDefault();
+                    var dateQuery = "SELECT getDate();";
+                    var date = db.Database.SqlQuery<DateTime>(dateQuery).FirstOrDefault();
 
-                reservation.Reservation_Id = (int)nextVal;
-                reservation.DateReservation = date;
+                    reservation.Reservation_Id = (int)nextVal;
+                    reservation.DateReservation = date;
 
-
-                db.Reservation.Add(reservation);
-                db.SaveChanges();
-                return RedirectToAction("check",reservation);
+                    db.Reservation.Add(reservation);
+                    db.SaveChanges();
+                    return RedirectToAction("check", reservation);
+                }
             }
 
+            // Retourner la vue avec le modèle pour que l'utilisateur puisse voir les erreurs
             return View(reservation);
         }
+
 
 
         // GET: Reservation/Edit/5
