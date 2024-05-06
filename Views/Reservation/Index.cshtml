@@ -13,28 +13,33 @@
     @Html.ActionLink("Créer une nouvelle réservation", "Create")
 </p>
 
+
 <table class="table">
     <tr>
         <th>ID</th>
         <th>Client ID</th>
-        <th>Room ID</th>
-        <th>Départ Date</th>
-        <th>Fin Date</th>
+
+
+
         <th>Reservation Date</th>
         <th>Nombre de rooms</th>
-        <th>Prix Total</th>
+        <th>Date Depart</th>
+        <th>Date Fin</th>
+        <th>PrixTotal</th>
+
     </tr>
     @foreach (var item in Model)
     {
         <tr>
             <td>@item.Reservation_Id</td>
             <td>@item.client_id</td>
-            <td>@item.room_id</td>
-            <td>@item.DateDepart</td>
-            <td>@item.DateArrivee</td>
+
             <td>@item.DateReservation</td>
             <td>@item.nombreChambres</td>
+            <td>@item.dateDepart</td>
+            <td>@item.dateArrivee</td>
             <td>@item.prixTotale</td>
+
             <td>
                 @Html.ActionLink("Détails", "Details", new { id = item.Reservation_Id }) |
                 @Html.ActionLink("Modifier", "Edit", new { id = item.Reservation_Id }) |
@@ -43,5 +48,10 @@
         </tr>
     }
 </table>
+
+
+<p>
+    @Html.ActionLink("check", "check")
+</p>
 
 

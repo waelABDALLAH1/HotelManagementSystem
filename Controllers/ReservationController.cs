@@ -11,7 +11,7 @@ namespace hotelManagementSystem20.Controllers
 {
     public class ReservationController : Controller
     {
-        private HotelManagementSystemEntities4 db = new HotelManagementSystemEntities4();
+        private HotelManagementSystemEntities3 db = new HotelManagementSystemEntities3();
         // GET: Reservation
         public ActionResult Index()
         {
@@ -19,6 +19,61 @@ namespace hotelManagementSystem20.Controllers
             return View(reservations);
          
         }
+
+        public ActionResult check(Reservation reservation)
+        {
+
+            // Récupérer les détails des chambres disponibles pour la période spécifiée
+            var availableRooms = db.room
+                .Where(r => !db.ReservationDetail
+                                .Any(rd => db.ReservationDetail
+                                                .Any(res => res.Reservation_ID == rd.Reservation_ID &&
+                                                            res.DateDepart <= reservation.dateArrivee &&
+                                                            res.DateArrivee >= reservation.dateDepart) &&
+                                            rd.Room_ID == r.room_id))
+                .ToList();
+            ViewBag.ReservationId = reservation.Reservation_Id;
+
+            // Exécuter la requête de mise à jour pour le nombre de chambres réservées
+            string updateChambreQuery = $"UPDATE Reservation SET nombreChambres = (SELECT COUNT(*) FROM ReservationDetail WHERE Reservation_ID = {reservation.Reservation_Id});";
+            db.Database.ExecuteSqlCommand(updateChambreQuery);
+
+            // Exécuter la requête de mise à jour pour le prix total
+            string updatePrixQuery = $"UPDATE Reservation SET prixTotale = (SELECT SUM(r.price) FROM Room r, Reservation res, ReservationDetail rd WHERE rd.Reservation_ID = {reservation.Reservation_Id} AND r.Room_id = rd.Room_id);";
+            db.Database.ExecuteSqlCommand(updatePrixQuery);
+            return View(availableRooms);
+        }
+
+        
+    public ActionResult Add(int roomId, int reservationId)
+        {
+            // Récupérer les informations nécessaires pour créer une instance de ReservationDetail
+            var room = db.room.Find(roomId);
+            var reservation = db.Reservation.Find(reservationId);
+
+
+            var dateDepart = reservation.dateDepart;
+            var dateArrivee = reservation.dateArrivee;
+
+            // Créer une nouvelle instance de ReservationDetail
+            ReservationDetail reservationDetail = new ReservationDetail
+            {
+                Room_ID = roomId,
+                Reservation_ID = reservationId,
+                DateDepart = dateDepart,
+                DateArrivee = dateArrivee
+            };
+
+            // Ajouter la nouvelle instance de ReservationDetail à la base de données
+            db.ReservationDetail.Add(reservationDetail);
+            db.SaveChanges();
+
+            // Rediriger vers une vue ou une action appropriée
+            return RedirectToAction("check",reservation); 
+        }
+
+
+
         public ActionResult Details(int id)
         {
             var reservation = db.Reservation.Find(id);
@@ -54,7 +109,7 @@ namespace hotelManagementSystem20.Controllers
 
                 db.Reservation.Add(reservation);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("check",reservation);
             }
 
             return View(reservation);
@@ -67,6 +122,8 @@ namespace hotelManagementSystem20.Controllers
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+
+
             }
             Reservation reservation = db.Reservation.Find(id);
             if (reservation == null)

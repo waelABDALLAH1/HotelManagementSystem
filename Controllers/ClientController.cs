@@ -8,7 +8,7 @@ namespace hotelManagementSystem20.Controllers
 {
     public class ClientController : Controller
     {
-        private HotelManagementSystemEntities4 db = new HotelManagementSystemEntities4();
+        private HotelManagementSystemEntities3 db = new HotelManagementSystemEntities3();
 
         // GET: Client
         public ActionResult Index()
