@@ -1,23 +1,93 @@
-﻿
-    @model hotelManagementSystem20.models.room
+﻿@model hotelManagementSystem20.models.room
 
-    @{
-        ViewBag.Title = "Supprimer la chambre";
-    }
-    @{
-        Layout = "~/Views/Shared/_Layout.cshtml";
-    }
-    <h2>Supprimer la chambre</h2>
+@{
+    ViewBag.Title = "Supprimer la chambre";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
 
-    <div>
-        <h4>Êtes-vous sûr de vouloir supprimer cette chambre ?</h4>
-        <h3>@Model.room_no</h3>
-        <div>
-            @using (Html.BeginForm())
-            {
-                @Html.AntiForgeryToken()
-                <input type="submit" value="Supprimer" class="btn btn-danger" />
-                @Html.ActionLink("Annuler", "Index", null, new { @class = "btn btn-default" })
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supprimer la chambre - Hotel Management System</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <style>
+        .container {
+            margin: 20px auto;
+            max-width: 400px;
+            background-color: #d6c6b0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            background-color: #f8f9fa; /* Light gray background */
+            font-family: Arial, sans-serif;
+        }
+
+        h2 {
+            color: #46331D; /* Dark brown heading */
+            margin-bottom: 20px;
+            margin-top: 0; /* Adjusted */
+        }
+
+        h4 {
+            color: #464a4c; /* Dark gray text */
+            margin-bottom: 10px;
+        }
+
+        .btn-default {
+            background-color: #5d4733; /* Gray button color */
+            color: #fff; /* White text color */
+            border: none;
+            border-radius: 5px;
+            padding: 8px 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+        }
+
+            .btn-default:hover {
+                background-color: #c0a58b; /* Darker gray on hover */
             }
+
+        .btn-danger {
+            background-color: #dc3545; /* Red button color */
+            color: #fff; /* White text color */
+            border: none;
+            border-radius: 5px;
+            padding: 8px 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+            margin-left: 5px;
+        }
+
+            .btn-danger:hover {
+                background-color: #c82333; /* Darker red on hover */
+            }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Supprimer la chambre</h2>
+
+        <div>
+            <h4>Êtes-vous sûr de vouloir supprimer cette chambre ?</h4>
+            <h3>@Model.room_no</h3>
+            <div>
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    <input type="submit" value="Supprimer" class="btn btn-danger" />
+                    @Html.ActionLink("Annuler", "Index", null, new { @class = "btn btn-default" })
+                }
+            </div>
         </div>
     </div>
+
+</body>
+</html>

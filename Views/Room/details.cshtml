@@ -2,51 +2,106 @@
 
 @{
     ViewBag.Title = "Détails de la chambre";
-}
-@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<h2>Détails de la chambre</h2>
 
-<div>
-    <h4>Chambre</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.room_no)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.room_no)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.room_type)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.room_type)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.room_phone)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.room_phone)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.availability)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.availability)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.price)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.price)
-        </dd>
-    </dl>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détails de la chambre - Hotel Management System</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <style>
+        .container {
+            margin: 20px;
+            background-color: #d6c6b0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
 
-<p>
-    @Html.ActionLink("Modifier", "Edit", new { id = Model.room_id }) |
-    @Html.ActionLink("Retour à la liste", "Index")
-</p>
+        body {
+            background-color: #f8f9fa; /* Light gray background */
+            font-family: Arial, sans-serif;
+        }
 
+        h2 {
+            color: #46331D; /* Dark brown heading */
+            margin-bottom: 20px;
+        }
+
+        .dl-horizontal dt {
+            width: 120px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            color: #464a4c;
+            font-weight: bold;
+        }
+
+        .dl-horizontal dd {
+            margin-left: 140px;
+        }
+
+        .action-links a {
+            margin-right: 10px;
+            color: #5d4733;
+            text-decoration: none;
+        }
+
+            .action-links a:hover {
+                text-decoration: underline;
+            }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Détails de la chambre</h2>
+
+        <div>
+            <h4>Chambre</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.room_no)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.room_no)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.room_type)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.room_type)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.room_phone)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.room_phone)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.availability)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.availability)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.price)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.price)
+                </dd>
+            </dl>
+        </div>
+
+        <p class="action-links">
+            @Html.ActionLink("Modifier", "Edit", new { id = Model.room_id })
+            @Html.ActionLink("Retour à la liste", "Index")
+        </p>
+    </div>
+
+</body>
+</html>

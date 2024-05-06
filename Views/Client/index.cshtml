@@ -2,39 +2,135 @@
 
 @{
     ViewBag.Title = "Liste des clients";
-}
-@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Liste des clients</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des clients - Hotel Management System</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <style>
+        .container {
+            margin: 20px auto;
+            max-width: 800px;
+            background-color: #d6c6b0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
 
-<p>
-    @Html.ActionLink("Créer un nouveau client", "Create")
-</p>
+        body {
+            background-color: #f8f9fa; /* Light gray background */
+            font-family: Arial, sans-serif;
+        }
 
-<table class="table">
-    <tr>
-        <th>ID</th>
-        <th>Nom</th>
-        <th>Prénom</th>
-        <th>Téléphone</th>
-        <th>Adresse</th>
-        <th></th>
-    </tr>
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>@item.client_id</td>
-            <td>@item.last_name</td>
-            <td>@item.first_name</td>
-            <td>@item.phone_no</td>
-            <td>@item.address</td>
-            <td>
-                @Html.ActionLink("Détails", "Details", new { id = item.client_id }) |
-                @Html.ActionLink("Modifier", "Edit", new { id = item.client_id }) |
-                @Html.ActionLink("Supprimer", "Delete", new { id = item.client_id })
-            </td>
-        </tr>
-    }
-</table>
+        h2 {
+            color: #46331D; /* Dark brown heading */
+            margin-bottom: 20px;
+            margin-top: 0; /* Adjusted */
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0;
+            background-color: #c0a58b;
+            border: 1px solid #dee2e6;
+        }
+
+            .table th,
+            .table td {
+                padding: 8px;
+                line-height: 1.42857143;
+                vertical-align: top;
+                border-top: 1px solid #dee2e6;
+                background-color: #d9d8d6;
+            }
+
+            .table th {
+                vertical-align: bottom;
+                border-bottom: 2px solid #dee2e6;
+                color: #464a4c;
+                font-weight: bold;
+                background-color: #c0a58b;
+            }
+
+            .table tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+
+            .table tr:hover {
+                background-color: #e9ecef;
+            }
+
+        .btn-default {
+            background-color: #5d4733; /* Gray button color */
+            color: #fff; /* White text color */
+            border: none;
+            border-radius: 5px;
+            padding: 8px 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+        }
+
+            .btn-default:hover {
+                background-color: #c0a58b; /* Darker gray on hover */
+            }
+
+        .btn-danger {
+            background-color: #dc3545; /* Red button color */
+            color: #fff; /* White text color */
+            border: none;
+            border-radius: 5px;
+            padding: 8px 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+            margin-left: 5px;
+        }
+
+            .btn-danger:hover {
+                background-color: #c82333; /* Darker red on hover */
+            }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Liste des clients</h2>
+
+        <p>
+            <a href="@Url.Action("Create")" class="btn btn-default">Créer un nouveau client</a>
+        </p>
+
+        <table class="table">
+            <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Téléphone</th>
+                <th>Adresse</th>
+                <th></th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.last_name</td>
+                    <td>@item.first_name</td>
+                    <td>@item.phone_no</td>
+                    <td>@item.address</td>
+                    <td>
+                        <a href="@Url.Action("Details", new { id = item.client_id })" class="btn btn-default">Détails</a>
+                        <a href="@Url.Action("Edit", new { id = item.client_id })" class="btn btn-default">Modifier</a>
+                        <a href="@Url.Action("Delete", new { id = item.client_id })" class="btn btn-danger">Supprimer</a>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+
+</body>
+</html>

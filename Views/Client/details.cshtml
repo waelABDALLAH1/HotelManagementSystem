@@ -2,46 +2,108 @@
 
 @{
     ViewBag.Title = "Détails du client";
-}
-@{
-    Layout = "~/Views/Shared/_Layout.cshtml"; 
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Détails du client</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détails du client - Hotel Management System</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <style>
+        .container {
+            margin: 20px auto;
+            max-width: 400px;
+            background-color: #d6c6b0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
 
-<div>
-    <h4>Client</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.first_name)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.first_name)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.last_name)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.last_name)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.phone_no)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.phone_no)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.address)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.address)
-        </dd>
-        
-    </dl>
-</div>
+        body {
+            background-color: #f8f9fa; /* Light gray background */
+            font-family: Arial, sans-serif;
+        }
 
-<p>
-    @Html.ActionLink("Modifier", "Edit", new { id = Model.client_id }) |
-    @Html.ActionLink("Retour à la liste", "Index")
-</p>
+        h2 {
+            color: #46331D; /* Dark brown heading */
+            margin-bottom: 20px;
+            margin-top: 0; /* Adjusted */
+        }
+
+        h4 {
+            color: #464a4c; /* Dark gray text */
+            margin-bottom: 10px;
+        }
+
+        .dl-horizontal dt {
+            width: 120px;
+            font-weight: bold;
+        }
+
+        .dl-horizontal dd {
+            margin-left: 140px;
+            margin-bottom: 10px;
+        }
+
+        .btn-default {
+            background-color: #5d4733; /* Gray button color */
+            color: #fff; /* White text color */
+            border: none;
+            border-radius: 5px;
+            padding: 8px 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+        }
+
+            .btn-default:hover {
+                background-color: #c0a58b; /* Darker gray on hover */
+            }
+
+        .btn-primary {
+            background-color: #9a7a43; /* Blue button color */
+            color: #fff; /* White text color */
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+        }
+
+            .btn-primary:hover {
+                background-color: #9a7a43; /* Darker blue on hover */
+            }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Détails du client</h2>
+
+        <div>
+            <h4>Client</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>Prénom</dt>
+                <dd>@Model.first_name</dd>
+                <dt>Nom</dt>
+                <dd>@Model.last_name</dd>
+                <dt>Téléphone</dt>
+                <dd>@Model.phone_no</dd>
+                <dt>Adresse</dt>
+                <dd>@Model.address</dd>
+            </dl>
+        </div>
+
+        <div>
+            <a href="@Url.Action("Edit", new { id = Model.client_id })" class="btn btn-primary">Modifier</a>
+            <a href="@Url.Action("Index")" class="btn btn-default">Retour à la liste</a>
+        </div>
+    </div>
+
+</body>
+</html>
