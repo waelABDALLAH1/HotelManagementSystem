@@ -2,37 +2,143 @@
 
 @{
     ViewBag.Title = "Liste des clients";
-}
-@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Liste des clients</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des clients - Hotel Management System</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa; /* Light gray background */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
 
-<p>
-    @Html.ActionLink("Créer un nouveau client", "Create")
-</p>
+        .container {
+            margin: 20px auto;
+            max-width: 1200px; /* Adjusted width to match the room listing */
+            background-color: #d6c6b0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow-x: auto; /* Allows horizontal scrolling on smaller devices */
+        }
 
-<table class="table">
-    <tr>
-        <th>Nom</th>
-        <th>Prénom</th>
-        <th>Téléphone</th>
-        <th>Adresse</th>
-        <th></th>
-    </tr>
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>@item.last_name</td>
-            <td>@item.first_name</td>
-            <td>@item.phone_no</td>
-            <td>@item.address</td>
-            <td>
-                @Html.ActionLink("Détails", "Details", new { id = item.client_id }) |
-                @Html.ActionLink("Modifier", "Edit", new { id = item.client_id }) |
-                @Html.ActionLink("Supprimer", "Delete", new { id = item.client_id })
-            </td>
-        </tr>
-    }
-</table>
+        h2 {
+            color: #46331D; /* Dark brown heading */
+            margin-bottom: 20px;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #c0a58b;
+            border: 1px solid #dee2e6;
+        }
+
+            .table th, .table td {
+                padding: 8px;
+                vertical-align: top;
+                border-top: 1px solid #dee2e6;
+                background-color: #d9d8d6;
+                text-align: center; /* Centers text and content */
+            }
+
+            .table th {
+                vertical-align: bottom;
+                border-bottom: 2px solid #dee2e6;
+                color: #464a4c;
+                font-weight: bold;
+            }
+
+            .table tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+
+            .table tr:hover {
+                background-color: #e9ecef;
+            }
+
+        .btn, .btn-default, .btn-danger {
+            color: #fff;
+            background-color: #5d4733; /* Standard button color */
+            border: none;
+            border-radius: 5px;
+            padding: 7px 2px; /* Adjusted padding to ensure better fit */
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+            display: inline-block; /* Ensures buttons are properly aligned */
+        }
+
+            .btn:hover, .btn-default:hover {
+                background-color: #c0a58b; /* Hover color change */
+            }
+
+        .btn-danger {
+            background-color: #dc3545; /* Red button for delete actions */
+        }
+
+            .btn-danger:hover {
+                background-color: #c82333; /* Darker red on hover */
+            }
+
+        @@media (max-width: 768px) {
+            .table, .btn {
+                width: 100%;
+                font-size: 0.9em; /* Scales down font size on smaller screens */
+            }
+
+            .container {
+                margin: 10px;
+                padding: 10px;
+            }
+
+            h2 {
+                font-size: 1.2em; /* Adjusts heading size for better readability */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Customer list</h2>
+        <p>
+            <a href="@Url.Action("Create")" class="btn btn-default">Create a new customer</a>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Last Name</th>
+                    <th>First name</th>
+                    <th>Phone</th>
+                    <th>Adress</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.last_name</td>
+                        <td>@item.first_name</td>
+                        <td>@item.phone_no</td>
+                        <td>@item.address</td>
+                        <td>
+                            <a href="@Url.Action("Details", new { id = item.client_id })" class="btn btn-default">Details</a>
+                            <a href="@Url.Action("Edit", new { id = item.client_id })" class="btn btn-default">Edit</a>
+                            <a href="@Url.Action("Delete", new { id = item.client_id })" class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -2,39 +2,145 @@
 
 @{
     ViewBag.Title = "Liste des chambres";
-}
-@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Liste des chambres</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des chambres - Hotel Management System</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #c0a58b; /* Light gray background */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
 
-<p>
-    @Html.ActionLink("Ajouter une nouvelle chambre", "Create")
-</p>
+        .container {
+            margin: 20px auto;
+            max-width: 1200px;
+            background-color: #d6c6b0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
 
-<table class="table">
-    <tr>
-        <th>Numéro</th>
-        <th>Type</th>
-        <th>Téléphone</th>
-        <th>Disponibilité</th>
-        <th>Prix</th>
-        <th></th>
-    </tr>
-    @foreach (var room in Model)
-    {
-        <tr>
-            <td>@room.room_no</td>
-            <td>@room.room_type</td>
-            <td>@room.room_phone</td>
-            <td>@room.availability</td>
-            <td>@room.price</td>
-            <td>
-                @Html.ActionLink("Détails", "Details", new { id = room.room_id }) |
-                @Html.ActionLink("Modifier", "Edit", new { id = room.room_id }) |
-                @Html.ActionLink("Supprimer", "Delete", new { id = room.room_id })
-            </td>
-        </tr>
-    }
-</table>
+        h2 {
+            color: #46331D; /* Dark brown heading */
+            margin-bottom: 20px;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #c0a58b;
+            border: 1px solid #dee2e6;
+        }
+
+            .table th, .table td {
+                padding: 8px;
+                vertical-align: top;
+                border-top: 1px solid #dee2e6;
+                background-color: #d9d8d6;
+            }
+
+            .table th {
+                vertical-align: bottom;
+                border-bottom: 2px solid #dee2e6;
+                color: #464a4c;
+                font-weight: bold;
+            }
+
+            .table tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+
+            .table tr:hover {
+                background-color: #e9ecef;
+            }
+
+        .action-link a, .btn {
+            color: #fff;
+            background-color: #5d4733;
+            border: none;
+            border-radius: 5px;
+            padding: 7px 2px; /* Adjusted padding to ensure better fit */
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+            .btn:hover {
+                background-color: #c0a58b;
+            }
+
+        .btn-danger {
+            background-color: #dc3545;
+        }
+
+            .btn-danger:hover {
+                background-color: #c82333;
+            }
+
+        @@media (max-width: 768px) {
+            .table, .btn {
+                width: 100%;
+                font-size: 0.9em;
+            }
+
+            .container {
+                margin: 10px;
+                padding: 10px;
+            }
+
+            h2 {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <h2>List of rooms</h2>
+        <p>
+            <a href="@Url.Action("Create")" class="btn">Add  a new room</a>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Number</th>
+                    <th>Type</th>
+                    <th>Phone</th>
+                    <th>Availability</th>
+                    <th>Price</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var room in Model)
+                {
+                    <tr>
+                        <td>@room.room_no</td>
+                        <td>@room.room_type</td>
+                        <td>@room.room_phone</td>
+                        <td>@room.availability</td>
+                        <td>@room.price</td>
+                        <td class="action-links">
+                            <a href="@Url.Action("Details", new { id = room.room_id })" class="btn">Details</a>
+                            <a href="@Url.Action("Edit", new { id = room.room_id })" class="btn">Edit</a>
+                            <a href="@Url.Action("Delete", new { id = room.room_id })" class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+

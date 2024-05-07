@@ -1,24 +1,67 @@
 ﻿@{
     ViewBag.Title = "Dashboard";
-}
-@{
-    Layout = "~/Views/Shared/_Layout.cshtml"; 
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<style>
-   
-    .btn-primary {
-        border-color: #007bff;  
-    }
-
-        .btn-primary:hover {
-            background-color: #0056b3;
-            border-color: #0056b3;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .content {
+            text-align: center; /* Centers the content */
+            padding: 50px 20px; /* Adds padding around the content */
+            background-color: rgba(255, 255, 255, 0.90); /* Semi-transparent white background */
+            margin: 200px auto; /* Centers the content block horizontally */
+            width: 80%; /* Specifies the width of the content block */
+            border-radius: 8px; /* Rounds the corners of the content block */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow around the content block */
+            backdrop-filter: blur(10px); /* Increases the blur effect for more vagueness */
         }
-</style>
 
+        h1 {
+            color: #333; /* Dark text for better readability */
+            margin-bottom: 0.5em; /* Adds space below the h1 */
+        }
 
-<div class="content">
-    <h1>Welcome to our hotel management system</h1>
-    <h2>Dashboard</h2>
-</div>
+        p {
+            color: #c0a58b; /* Light grey color for the h2 */
+          /* Smaller font size for h2 */
+            margin-top: 0; /* Adjusted to remove any default top margin */
+            margin-bottom: 1em; /* Adds space below the h2 */
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+
+            .btn-primary:hover {
+                background-color: #0056b3;
+                border-color: #0056b3;
+            }
+        .stars {
+            color: gold; /* Gold color for stars */
+            font-size: 24px; /* Larger font size for better visibility */
+            margin-top: 0.5em; /* Space above the star rating */
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>Welcome To Our Hotel Management System</h1>
+        <div>
+            <p>Discover The Perfect Balance Of Hospitality, Luxury And Comfort</p>
+            <p class="stars">★★★★★</p>
+        </div>
+    </div>
+</body>
+</html>

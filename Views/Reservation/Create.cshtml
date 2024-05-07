@@ -1,0 +1,117 @@
+﻿@model hotelManagementSystem20.models.Reservation
+
+@{
+    ViewBag.Title = "Créer une nouvelle réservation";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Créer une nouvelle réservation - Hotel Management System</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa; /* Light gray background */
+            margin: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        h2 {
+            color: #46331D; /* Dark brown heading */
+            margin-bottom: 20px;
+        }
+
+        .form-horizontal {
+            background-color: #d6c6b0; /* Light brown background for form */
+            padding: 20px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+            border: 1px solid #d6c6b0;
+            border-radius: 30px; /* Rounded corners for the form */
+        }
+
+        .control-label {
+            color: #46331D; /* Dark brown text for labels */
+        }
+
+        .form-control {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 10px 20px;
+            display: block;
+            width: 95%;
+            margin: 5px auto; /* Centering inputs within the form group */
+        }
+
+        .text-danger {
+            color: #dc3545; /* Red color for error messages */
+        }
+
+        .btn-default {
+            background-color: #5d4733; /* Brown button color */
+            color: #fff; /* White text color */
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+            .btn-default:hover {
+                background-color: #c0a58b; /* Lighter brown on hover */
+            }
+
+        .btn-back {
+            color: #5d4733; /* Brown color for back link */
+            text-decoration: none;
+            margin-top: 10px;
+            display: inline-block;
+        }
+
+            .btn-back:hover {
+                text-decoration: underline; /* Underline on hover */
+            }
+    </style>
+</head>
+<body>
+    <div class="form-horizontal">
+        <h2>Create a new booking </h2>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.client_id, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.client_id, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.client_id, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.dateDepart, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.dateDepart, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.dateDepart, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.dateArrivee, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.dateArrivee, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.dateArrivee, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </div>
+        }
+    </div>
+</body>
+</html>

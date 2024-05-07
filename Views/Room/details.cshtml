@@ -2,51 +2,105 @@
 
 @{
     ViewBag.Title = "Détails de la chambre";
-}
-@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<h2>Détails de la chambre</h2>
 
-<div>
-    <h4>Chambre</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.room_no)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.room_no)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.room_type)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.room_type)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.room_phone)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.room_phone)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.availability)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.availability)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.price)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.price)
-        </dd>
-    </dl>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détails de la chambre - Hotel Management System</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <style>
+        .container {
+            margin: 20px;
+            background-color: #d6c6b0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
 
-<p>
-    @Html.ActionLink("Modifier", "Edit", new { id = Model.room_id }) |
-    @Html.ActionLink("Retour à la liste", "Index")
-</p>
+        body {
+            background-color: #f8f9fa; /* Light gray background */
+            font-family: Arial, sans-serif;
+        }
 
+        h2 {
+            color: #46331D; /* Dark brown heading */
+            margin-bottom: 20px;
+        }
+
+        .dl-horizontal dt {
+            float: left;
+            width: auto; /* Adjusted for inline display */
+            clear: left;
+            text-align: left;
+            font-weight: bold;
+            color: #464a4c;
+            margin-right: 10px; /* Space between title and answer */
+        }
+
+        .dl-horizontal dd {
+            margin-left: 120px; /* Adjusted spacing */
+            margin-bottom: 10px; /* Space between lines */
+        }
+
+        .btn-primary {
+            background-color: #9a7a43; /* Blue button color */
+            color: #fff; /* White text color */
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+        }
+
+            .btn-primary:hover {
+                background-color: #9a7a43; /* Darker blue on hover */
+            }
+
+        .btn-default {
+            background-color: #5d4733; /* Gray button color */
+            color: #fff; /* White text color */
+            border: none;
+            border-radius: 5px;
+            padding: 8px 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+        }
+
+            .btn-default:hover {
+                background-color: #c0a58b; /* Darker gray on hover */
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Details of the Room</h2>
+        <div>
+            <h4>Room</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>Room No:</dt>
+                <dd>@Html.DisplayFor(model => model.room_no)</dd>
+                <dt>Room Type:</dt>
+                <dd>@Html.DisplayFor(model => model.room_type)</dd>
+                <dt>Room Phone:</dt>
+                <dd>@Html.DisplayFor(model => model.room_phone)</dd>
+                <dt>Availability:</dt>
+                <dd>@Html.DisplayFor(model => model.availability)</dd>
+                <dt>Price:</dt>
+                <dd>@Html.DisplayFor(model => model.price)</dd>
+            </dl>
+        </div>
+
+        <div>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.room_id }, new { @class = "btn btn-primary" })
+            @Html.ActionLink("Back to the list", "Index", null, new { @class = "btn btn-default" })
+        </div>
+    </div>
+</body>
+</html>
