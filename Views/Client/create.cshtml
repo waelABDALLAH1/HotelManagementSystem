@@ -10,7 +10,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Créer un nouveau client - Hotel Management System</title>
+    <title>Create new client - Hotel Management System</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <style>
         /* Add style to the input button */
@@ -54,14 +54,17 @@
             color: #dc3545; /* Red color for error messages */
         }
 
-        .btn-default {
-            background-color: #5d4733; /* Blue button color */
-            color: #fff; /* White text color */
+        .btn, .btn-default, .btn-danger {
+            color: #fff;
+            background-color: #5d4733; /* Standard button color */
             border: none;
             border-radius: 5px;
-            padding: 10px 20px;
+            padding: 8px 5px;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            text-decoration: none;
+            display: inline-block; /* Ensures buttons are properly aligned */
+            width: 100px; /* Uniform width for all buttons */
         }
 
             .btn-default:hover {
@@ -88,32 +91,32 @@
         @Html.AntiForgeryToken()
 
         <div class="form-horizontal">
-            <h2>Créer un nouveau client</h2>
+            <h2>Create a new client</h2>
             <hr />
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             <div class="form-group">
-                @Html.LabelFor(model => model.first_name, htmlAttributes: new { @class = "control-label col-md-2" })
+                <label class="control-label" for="first_name">First Name</label>
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.first_name, new { htmlAttributes = new { @class = "form-control", required = "required", maxlength = "20", pattern = "[A-Za-z]+", placeholder = "e.g. John" } })
                     @Html.ValidationMessageFor(model => model.first_name, "", new { @class = "text-danger" })
                 </div>
             </div>
             <div class="form-group">
-                @Html.LabelFor(model => model.last_name, htmlAttributes: new { @class = "control-label col-md-2" })
+                <label class="control-label" for="last_name">Last Name</label>
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.last_name, new { htmlAttributes = new { @class = "form-control", required = "required", maxlength = "20", pattern = "[A-Za-z]+", placeholder = "e.g. Doe" } })
                     @Html.ValidationMessageFor(model => model.last_name, "", new { @class = "text-danger" })
                 </div>
             </div>
             <div class="form-group">
-                @Html.LabelFor(model => model.phone_no, htmlAttributes: new { @class = "control-label col-md-2" })
+                <label class="control-label" for="phone_no">Phone Number</label>
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.phone_no, new { htmlAttributes = new { @class = "form-control", required = "required", maxlength = "8", placeholder = "e.g. 55 555 555", pattern = "[5-9][0-9]{7}", title = "The phone number must start with a number between 5 and 9 and must have 8 digits." } })
                     @Html.ValidationMessageFor(model => model.phone_no, "", new { @class = "text-danger" })
                 </div>
             </div>
             <div class="form-group">
-                @Html.LabelFor(model => model.address, htmlAttributes: new { @class = "control-label col-md-2" })
+                <label class="control-label" for="address">Address</label>
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.address, new { htmlAttributes = new { @class = "form-control", required = "required", maxlength = "100", autocomplete = "address-line1", placeholder = "e.g. 22 New York Street", pattern = "[a-zA-Z0-9 .,-]+" } })
                     @Html.ValidationMessageFor(model => model.address, "", new { @class = "text-danger" })
@@ -121,11 +124,11 @@
             </div>
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Créer" class="btn btn-default" />
+                    <input type="submit" value="Create" class="btn btn-default" />
                 </div>
             </div>
             <div>
-                @Html.ActionLink("Retour à la liste", "Index", null, new { @class = "btn-back" })
+                @Html.ActionLink("Back to list", "Index", null, new { @class = "btn-back" })
             </div>
         </div>
     }

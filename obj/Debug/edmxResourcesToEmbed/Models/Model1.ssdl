@@ -7,7 +7,7 @@
     <Property Name="client_id" Type="int" Nullable="false" />
     <Property Name="first_name" Type="varchar" MaxLength="20" Nullable="false" />
     <Property Name="last_name" Type="varchar" MaxLength="20" Nullable="false" />
-    <Property Name="phone_no" Type="int" Nullable="false" />
+    <Property Name="phone_no" Type="varchar" MaxLength="20" />
     <Property Name="address" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="Reservation">
@@ -16,12 +16,21 @@
     </Key>
     <Property Name="Reservation_Id" Type="int" Nullable="false" />
     <Property Name="client_id" Type="int" Nullable="false" />
-    <Property Name="room_id" Type="int" Nullable="false" />
-    <Property Name="DateDepart" Type="date" Nullable="false" />
-    <Property Name="DateArrivee" Type="date" Nullable="false" />
     <Property Name="DateReservation" Type="date" Nullable="false" />
     <Property Name="nombreChambres" Type="int" Nullable="false" />
-    <Property Name="prixTotale" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="prixTotale" Type="float" />
+    <Property Name="dateDepart" Type="date" />
+    <Property Name="dateArrivee" Type="date" />
+  </EntityType>
+  <EntityType Name="ReservationDetail">
+    <Key>
+      <PropertyRef Name="Reservation_ID" />
+      <PropertyRef Name="Room_ID" />
+    </Key>
+    <Property Name="Reservation_ID" Type="int" Nullable="false" />
+    <Property Name="Room_ID" Type="int" Nullable="false" />
+    <Property Name="DateDepart" Type="date" />
+    <Property Name="DateArrivee" Type="date" />
   </EntityType>
   <EntityType Name="room">
     <Key>
@@ -30,7 +39,7 @@
     <Property Name="room_id" Type="int" Nullable="false" />
     <Property Name="room_no" Type="int" Nullable="false" />
     <Property Name="room_type" Type="varchar" MaxLength="20" Nullable="false" />
-    <Property Name="room_phone" Type="int" />
+    <Property Name="room_phone" Type="varchar" MaxLength="20" />
     <Property Name="availability" Type="varchar" MaxLength="5" Nullable="false" />
     <Property Name="price" Type="int" Nullable="false" />
   </EntityType>
@@ -42,6 +51,58 @@
     <Property Name="Username" Type="varchar" MaxLength="20" />
     <Property Name="Password" Type="varchar" MaxLength="20" />
   </EntityType>
+  <Association Name="FK__Reservati__Reser__07C12930">
+    <End Role="Reservation" Type="Self.Reservation" Multiplicity="1" />
+    <End Role="ReservationDetail" Type="Self.ReservationDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Reservation">
+        <PropertyRef Name="Reservation_Id" />
+      </Principal>
+      <Dependent Role="ReservationDetail">
+        <PropertyRef Name="Reservation_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Reservati__Room___08B54D69">
+    <End Role="room" Type="Self.room" Multiplicity="1" />
+    <End Role="ReservationDetail" Type="Self.ReservationDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="room">
+        <PropertyRef Name="room_id" />
+      </Principal>
+      <Dependent Role="ReservationDetail">
+        <PropertyRef Name="Room_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ResDetail_Res">
+    <End Role="Reservation" Type="Self.Reservation" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ReservationDetail" Type="Self.ReservationDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Reservation">
+        <PropertyRef Name="Reservation_Id" />
+      </Principal>
+      <Dependent Role="ReservationDetail">
+        <PropertyRef Name="Reservation_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ResDetail_Room">
+    <End Role="room" Type="Self.room" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ReservationDetail" Type="Self.ReservationDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="room">
+        <PropertyRef Name="room_id" />
+      </Principal>
+      <Dependent Role="ReservationDetail">
+        <PropertyRef Name="Room_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Reservation_Client">
     <End Role="client" Type="Self.client" Multiplicity="1">
       <OnDelete Action="Cascade" />
@@ -56,31 +117,30 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Reservation_Room">
-    <End Role="room" Type="Self.room" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Role="Reservation" Type="Self.Reservation" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="room">
-        <PropertyRef Name="room_id" />
-      </Principal>
-      <Dependent Role="Reservation">
-        <PropertyRef Name="room_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <EntityContainer Name="HotelManagementSystemModelStoreContainer">
     <EntitySet Name="client" EntityType="Self.client" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Reservation" EntityType="Self.Reservation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ReservationDetail" EntityType="Self.ReservationDetail" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="room" EntityType="Self.room" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Reservati__Reser__07C12930" Association="Self.FK__Reservati__Reser__07C12930">
+      <End Role="Reservation" EntitySet="Reservation" />
+      <End Role="ReservationDetail" EntitySet="ReservationDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Reservati__Room___08B54D69" Association="Self.FK__Reservati__Room___08B54D69">
+      <End Role="room" EntitySet="room" />
+      <End Role="ReservationDetail" EntitySet="ReservationDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ResDetail_Res" Association="Self.FK_ResDetail_Res">
+      <End Role="Reservation" EntitySet="Reservation" />
+      <End Role="ReservationDetail" EntitySet="ReservationDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ResDetail_Room" Association="Self.FK_ResDetail_Room">
+      <End Role="room" EntitySet="room" />
+      <End Role="ReservationDetail" EntitySet="ReservationDetail" />
+    </AssociationSet>
     <AssociationSet Name="FK_Reservation_Client" Association="Self.FK_Reservation_Client">
       <End Role="client" EntitySet="client" />
-      <End Role="Reservation" EntitySet="Reservation" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Reservation_Room" Association="Self.FK_Reservation_Room">
-      <End Role="room" EntitySet="room" />
       <End Role="Reservation" EntitySet="Reservation" />
     </AssociationSet>
   </EntityContainer>

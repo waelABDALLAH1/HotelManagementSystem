@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="HotelManagementSystemModelStoreContainer" CdmEntityContainer="HotelManagementSystemEntities4">
+  <EntityContainerMapping StorageEntityContainer="HotelManagementSystemModelStoreContainer" CdmEntityContainer="HotelManagementSystemEntities1">
     <EntitySetMapping Name="client">
       <EntityTypeMapping TypeName="HotelManagementSystemModel.client">
         <MappingFragment StoreEntitySet="client">
@@ -17,12 +17,21 @@
         <MappingFragment StoreEntitySet="Reservation">
           <ScalarProperty Name="Reservation_Id" ColumnName="Reservation_Id" />
           <ScalarProperty Name="client_id" ColumnName="client_id" />
-          <ScalarProperty Name="room_id" ColumnName="room_id" />
-          <ScalarProperty Name="DateDepart" ColumnName="DateDepart" />
-          <ScalarProperty Name="DateArrivee" ColumnName="DateArrivee" />
           <ScalarProperty Name="DateReservation" ColumnName="DateReservation" />
           <ScalarProperty Name="nombreChambres" ColumnName="nombreChambres" />
           <ScalarProperty Name="prixTotale" ColumnName="prixTotale" />
+          <ScalarProperty Name="dateDepart" ColumnName="dateDepart" />
+          <ScalarProperty Name="dateArrivee" ColumnName="dateArrivee" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReservationDetail">
+      <EntityTypeMapping TypeName="HotelManagementSystemModel.ReservationDetail">
+        <MappingFragment StoreEntitySet="ReservationDetail">
+          <ScalarProperty Name="Reservation_ID" ColumnName="Reservation_ID" />
+          <ScalarProperty Name="Room_ID" ColumnName="Room_ID" />
+          <ScalarProperty Name="DateDepart" ColumnName="DateDepart" />
+          <ScalarProperty Name="DateArrivee" ColumnName="DateArrivee" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

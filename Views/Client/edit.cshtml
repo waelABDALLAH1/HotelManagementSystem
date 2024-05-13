@@ -10,7 +10,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modifier le client - Hotel Management System</title>
+    <title>Edit client - Hotel Management System</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <style>
         .container {
@@ -49,31 +49,23 @@
             box-sizing: border-box;
         }
 
-        .btn-default {
-            background-color: #5d4733; /* Gray button color */
-            color: #fff; /* White text color */
+        .btn, .btn-default, .btn-danger {
+            color: #fff;
+            background-color: #5d4733; /* Standard button color */
             border: none;
             border-radius: 5px;
-            padding: 8px 16px;
+            padding: 8px 5px;
             cursor: pointer;
             transition: background-color 0.3s ease;
             text-decoration: none;
+            display: inline-block; /* Ensures buttons are properly aligned */
+            width: 100px; /* Uniform width for all buttons */
         }
 
             .btn-default:hover {
                 background-color: #c0a58b; /* Darker gray on hover */
             }
 
-        .btn-primary {
-            background-color: #9a7a43; /* Blue button color */
-            color: #fff; /* White text color */
-            border: none;
-            border-radius: 5px;
-            padding: 10px 20px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            text-decoration: none;
-        }
 
             .btn-primary:hover {
                 background-color: #9a7a43; /* Darker blue on hover */
@@ -83,39 +75,47 @@
 <body>
 
     <div class="container">
-        <h2>Modifier le client</h2>
+        <h2>Edit client</h2>
 
-        @using (Html.BeginForm())
+        @using (Html.BeginForm("Edit", "Client", FormMethod.Post, new { id = "editForm" }))
         {
             @Html.AntiForgeryToken()
 
-    <div class="form-group">
-        <label class="control-label" for="first_name">Prénom</label>
-        @Html.EditorFor(model => model.first_name, new { htmlAttributes = new { @class = "form-control", required = "required", maxlength = "20", pattern = "[A-Za-z]+", placeholder = "e.g. John" } })
-        @Html.ValidationMessageFor(model => model.first_name, "", new { @class = "text-danger" })
-    </div>
-
-    <div class="form-group">
-        <label class="control-label" for="last_name">Nom</label>
-        @Html.EditorFor(model => model.last_name, new { htmlAttributes = new { @class = "form-control", required = "required", maxlength = "20", pattern = "[A-Za-z]+", placeholder = "e.g. Doe" } })
-        @Html.ValidationMessageFor(model => model.last_name, "", new { @class = "text-danger" })
-    </div>
-
-    <div class="form-group">
-        <label class="control-label" for="phone_no">Téléphone</label>
-        @Html.EditorFor(model => model.phone_no, new { htmlAttributes = new { @class = "form-control", required = "required", maxlength = "8", placeholder = "e.g. 55 555 555", pattern = "[5-9][0-9]{7}", title = "The phone number must start with a number between 5 and 9 and must have 8 digits." } })
-        @Html.ValidationMessageFor(model => model.phone_no, "", new { @class = "text-danger" })
-    </div>
-
-    <div class="form-group">
-        <label class="control-label" for="address">Adresse</label>
-        @Html.EditorFor(model => model.address, new { htmlAttributes = new { @class = "form-control", required = "required", maxlength = "100", autocomplete = "address-line1", placeholder = "e.g. 22 New York Street", pattern = "[a-zA-Z0-9 .,-]+" } })
-        @Html.ValidationMessageFor(model => model.address, "", new { @class = "text-danger" })
-    </div>
+            <div class="form-group">
+                <label class="control-label" for="first_name">First Name</label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.first_name, new { htmlAttributes = new { @class = "form-control", required = "required", maxlength = "20", pattern = "[A-Za-z]+", placeholder = "e.g. John" } })
+                    @Html.ValidationMessageFor(model => model.first_name, "", new { @class = "text-danger" })
+                </div>
+            </div>
 
             <div class="form-group">
-                <input type="submit" value="Enregistrer" class="btn btn-primary" />
-                @Html.ActionLink("Retour à la liste", "Index", null, new { @class = "btn btn-default" })
+                <label class="control-label" for="last_name">Last Name</label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.last_name, new { htmlAttributes = new { @class = "form-control", required = "required", maxlength = "20", pattern = "[A-Za-z]+", placeholder = "e.g. Doe" } })
+                    @Html.ValidationMessageFor(model => model.last_name, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label" for="phone_no">Phone Number</label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.phone_no, new { htmlAttributes = new { @class = "form-control", required = "required", maxlength = "8", placeholder = "e.g. 55 555 555", pattern = "[5-9][0-9]{7}", title = "The phone number must start with a number between 5 and 9 and must have 8 digits." } })
+                    @Html.ValidationMessageFor(model => model.phone_no, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label" for="address">Address</label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.address, new { htmlAttributes = new { @class = "form-control", required = "required", maxlength = "100", autocomplete = "address-line1", placeholder = "e.g. 22 New York Street", pattern = "[a-zA-Z0-9 .,-]+" } })
+                    @Html.ValidationMessageFor(model => model.address, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+                @Html.ActionLink("Back to list", "Index", null, new { @class = "btn btn-default" })
             </div>
         }
     </div>

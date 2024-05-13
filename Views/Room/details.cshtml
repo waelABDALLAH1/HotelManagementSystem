@@ -10,7 +10,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Détails de la chambre - Hotel Management System</title>
+    <title>Room Details - Hotel Management System</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <style>
         .container {
@@ -50,6 +50,19 @@
             text-decoration: none;
         }
 
+        .btn, .btn-default, .btn-danger {
+            color: #fff;
+            background-color: #5d4733; /* Standard button color */
+            border: none;
+            border-radius: 5px;
+            padding: 8px 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+            display: inline-block; /* Ensures buttons are properly aligned */
+            width: 100px; /* Uniform width for all buttons */
+        }
+
             .action-links a:hover {
                 text-decoration: underline;
             }
@@ -58,10 +71,10 @@
 <body>
 
     <div class="container">
-        <h2>Détails de la chambre</h2>
+        <h2>Room Details</h2>
 
         <div>
-            <h4>Chambre</h4>
+            <h4>Room</h4>
             <hr />
             <dl class="dl-horizontal">
                 <dt>
@@ -98,8 +111,8 @@
         </div>
 
         <p class="action-links">
-            @Html.ActionLink("Modifier", "Edit", new { id = Model.room_id })
-            @Html.ActionLink("Retour à la liste", "Index")
+            @Html.ActionLink("Edit", "Edit", new { id = Model.room_id })
+            @Html.ActionLink("Back to list", "Index")
         </p>
     </div>
 

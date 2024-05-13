@@ -4,13 +4,17 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="27187b3b276b4f988d6260f3556c0817" Name="Diagram1">
-        <EntityTypeShape EntityType="HotelManagementSystemModel.client" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="HotelManagementSystemModel.Reservation" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="HotelManagementSystemModel.room" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="HotelManagementSystemModel.users" Width="1.5" PointX="6.625" PointY="3.625" IsExpanded="true" />
+      <Diagram DiagramId="e4d4fc4479f5475caa0bdaf7b1a3ba89" Name="Diagram1">
+        <EntityTypeShape EntityType="HotelManagementSystemModel.client" Width="1.5" PointX="1.5" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HotelManagementSystemModel.Reservation" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HotelManagementSystemModel.ReservationDetail" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="HotelManagementSystemModel.room" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="HotelManagementSystemModel.users" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
         <AssociationConnector Association="HotelManagementSystemModel.FK_Reservation_Client" ManuallyRouted="false" />
-        <AssociationConnector Association="HotelManagementSystemModel.FK_Reservation_Room" ManuallyRouted="false" />
+        <AssociationConnector Association="HotelManagementSystemModel.FK__Reservati__Reser__07C12930" ManuallyRouted="false" />
+        <AssociationConnector Association="HotelManagementSystemModel.FK_ResDetail_Res" ManuallyRouted="false" />
+        <AssociationConnector Association="HotelManagementSystemModel.FK__Reservati__Room___08B54D69" ManuallyRouted="false" />
+        <AssociationConnector Association="HotelManagementSystemModel.FK_ResDetail_Room" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

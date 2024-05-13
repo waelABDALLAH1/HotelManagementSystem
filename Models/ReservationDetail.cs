@@ -20,6 +20,8 @@ namespace hotelManagementSystem20.models
         public Nullable<System.DateTime> DateArrivee { get; set; }
     
         public virtual Reservation Reservation { get; set; }
+        public virtual Reservation Reservation1 { get; set; }
         public virtual room room { get; set; }
+        public virtual room room1 { get; set; }
     }
 }

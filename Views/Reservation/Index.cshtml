@@ -1,55 +1,166 @@
 ﻿@model IEnumerable<hotelManagementSystem20.models.Reservation>
 
 @{
-    ViewBag.Title = "Liste des reservations";
-}
-@{
+    ViewBag.Title = "Liste des réservations";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Liste des reservations</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des réservations - Hotel Management System</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa; /* Light gray background */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
 
-<p>
-    @Html.ActionLink("Créer une nouvelle réservation", "Create")
-</p>
+        .container {
+            margin: 20px auto;
+            max-width: 1200px; /* Adjusted width to match the room listing */
+            background-color: #d6c6b0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow-x: auto; /* Allows horizontal scrolling on smaller devices */
+        }
 
+        h2 {
+            color: #46331D; /* Dark brown heading */
+            margin-bottom: 20px;
+        }
 
-<table class="table">
-    <tr>
-        <th>ID</th>
-        <th>Client ID</th>
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #c0a58b;
+            border: 1px solid #dee2e6;
+        }
 
+            .table th, .table td {
+                padding: 8px;
+                vertical-align: top;
+                border-top: 1px solid #dee2e6;
+                background-color: #d9d8d6;
+                text-align: center; /* Centers text and content */
+            }
 
+            .table th {
+                vertical-align: bottom;
+                border-bottom: 2px solid #dee2e6;
+                color: #464a4c;
+                font-weight: bold;
+            }
 
-        <th>Reservation Date</th>
-        <th>Nombre de rooms</th>
-        <th>Date Depart</th>
-        <th>Date Fin</th>
-        <th>PrixTotal</th>
+            .table tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
 
-    </tr>
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>@item.Reservation_Id</td>
-            <td>@item.client_id</td>
+            .table tr:hover {
+                background-color: #e9ecef;
+            }
 
-            <td>@item.DateReservation</td>
-            <td>@item.nombreChambres</td>
-            <td>@item.dateDepart</td>
-            <td>@item.dateArrivee</td>
-            <td>@item.prixTotale</td>
+        .btn, .btn-default, .btn-danger {
+            color: #fff;
+            background-color: #5d4733; /* Standard button color */
+            border: none;
+            border-radius: 5px;
+            padding: 8px 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+            display: inline-block; /* Ensures buttons are properly aligned */
+            width: 100px; /* Uniform width for all buttons */
+        }
 
-            <td>
-                @Html.ActionLink("Détails", "Details", new { id = item.Reservation_Id }) |
-                @Html.ActionLink("Modifier", "Edit", new { id = item.Reservation_Id }) |
-                @Html.ActionLink("Supprimer", "Delete", new { id = item.Reservation_Id })
-            </td>
-        </tr>
-    }
-</table>
+            .btn:hover, .btn-default:hover {
+                background-color: #c0a58b; /* Hover color change */
+            }
 
+        .btn-danger {
+            background-color: #dc3545; /* Red button for delete actions */
+        }
 
+            .btn-danger:hover {
+                background-color: #c82333; /* Darker red on hover */
+            }
 
+        @@media (max-width: 768px) {
+            .table, .btn {
+                width: 100%;
+                font-size: 0.9em; /* Scales down font size on smaller screens */
+            }
 
+            .container {
+                margin: 10px;
+                padding: 10px;
+            }
 
+            h2 {
+                font-size: 1.2em; /* Adjusts heading size for better readability */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>List of bookings</h2>
+        <p>
+            @Html.ActionLink("Create a new booking", "Create", null, new { @class = "btn btn-default" })
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Client ID</th>
+                    <th>Booking date</th>
+                    <th>Number of rooms</th>
+                    <th> Start date</th>
+                    <th>End date</th>
+                    <th>Total Price</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Reservation_Id</td>
+                        <td>@item.client_id</td>
+                        <td>@item.DateReservation.ToString("yyyy-MM-dd")</td>
+                        <td>@item.nombreChambres</td>
+                        <td>
+                            @{
+                                if (item.dateDepart.HasValue)
+                                {
+                                    @item.dateDepart.Value.Date.ToString("yyyy-MM-dd")
+                                }
+                            }
+                        </td>
+                        <td>
+                            @{
+                                if (item.dateArrivee.HasValue)
+                                {
+                                    @item.dateArrivee.Value.Date.ToString("yyyy-MM-dd")
+                                }
+                            }
+                        </td>
+
+                        <td>@item.prixTotale</td>
+                        <td>
+                            <a href="@Url.Action("Details", new { id = item.Reservation_Id  })" class="btn btn-default">Details</a>
+                            <a href="@Url.Action("Edit", new { id = item.Reservation_Id  })" class="btn btn-default">Edit</a>
+                            <a href="@Url.Action("Delete", new { id = item.Reservation_Id  })" class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

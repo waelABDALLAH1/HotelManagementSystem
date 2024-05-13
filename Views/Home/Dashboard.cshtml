@@ -5,20 +5,35 @@
     Layout = "~/Views/Shared/_Layout.cshtml"; 
 }
 
+<head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+</head>
 <style>
-   
-    .btn-primary {
-        border-color: #007bff;  
+
+    .btn, .btn-default{
+        color: #fff;
+        background-color: #5d4733; /* Standard button color */
+        border: none;
+        border-radius: 5px;
+        padding: 8px 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        text-decoration: none;
+        display: inline-block; /* Ensures buttons are properly aligned */
+        width: 100px; /* Uniform width for all buttons */
     }
 
         .btn-primary:hover {
             background-color: #0056b3;
             border-color: #0056b3;
         }
+
+        h1 {
+            color: azure;
+        }
 </style>
 
 
 <div class="content">
     <h1>Welcome to our hotel management system</h1>
-    <h2>Dashboard</h2>
 </div>

@@ -19,8 +19,9 @@ namespace hotelManagementSystem20.models
         public room()
         {
             this.ReservationDetail = new HashSet<ReservationDetail>();
+            this.ReservationDetail1 = new HashSet<ReservationDetail>();
         }
-    
+
         public int room_id { get; set; }
         [Required(ErrorMessage = "Room number field is required.")]
         [Range(1, 300, ErrorMessage = "Room number must be between 1 and 300.")]
@@ -33,8 +34,10 @@ namespace hotelManagementSystem20.models
         public string availability { get; set; }
         [Required(ErrorMessage = "The price field is required.")]
         public int price { get; set; }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ReservationDetail> ReservationDetail { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ReservationDetail> ReservationDetail1 { get; set; }
     }
 }

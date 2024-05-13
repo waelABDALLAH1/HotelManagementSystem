@@ -8,7 +8,7 @@
     {
         public class RoomController : Controller
         {
-            private HotelManagementSystemEntities3 db = new HotelManagementSystemEntities3();
+            private HotelManagementSystemEntities1 db = new HotelManagementSystemEntities1();
 
             // GET: Room
             public ActionResult Index()

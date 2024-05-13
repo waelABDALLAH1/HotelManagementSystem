@@ -13,7 +13,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Créer une nouvelle chambre - Hotel Management System</title>
+    <title>Add a new room - Hotel Management System</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <style>
         /* Add style to the input button */
@@ -61,14 +61,17 @@
             color: #dc3545; /* Red color for error messages */
         }
 
-        .btn-default {
-            background-color: #5d4733; /* Blue button color */
-            color: #fff; /* White text color */
+        .btn, .btn-default, .btn-danger {
+            color: #fff;
+            background-color: #5d4733; /* Standard button color */
             border: none;
             border-radius: 5px;
-            padding: 10px 20px;
+            padding: 8px 5px;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            text-decoration: none;
+            display: inline-block; /* Ensures buttons are properly aligned */
+            width: 100px; /* Uniform width for all buttons */
         }
 
             .btn-default:hover {
@@ -95,7 +98,7 @@
         @Html.AntiForgeryToken()
 
         <div class="form-horizontal">
-            <h2>Create a new room</h2>
+            <h2>Add a new room</h2>
             <hr />
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             <div class="form-group">

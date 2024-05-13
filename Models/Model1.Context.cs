@@ -13,10 +13,10 @@ namespace hotelManagementSystem20.models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class HotelManagementSystemEntities4 : DbContext
+    public partial class HotelManagementSystemEntities1 : DbContext
     {
-        public HotelManagementSystemEntities4()
-            : base("name=HotelManagementSystemEntities4")
+        public HotelManagementSystemEntities1()
+            : base("name=HotelManagementSystemEntities1")
         {
         }
     
@@ -27,6 +27,7 @@ namespace hotelManagementSystem20.models
     
         public virtual DbSet<client> client { get; set; }
         public virtual DbSet<Reservation> Reservation { get; set; }
+        public virtual DbSet<ReservationDetail> ReservationDetail { get; set; }
         public virtual DbSet<room> room { get; set; }
         public virtual DbSet<users> users { get; set; }
     }

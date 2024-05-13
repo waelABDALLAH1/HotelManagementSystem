@@ -18,18 +18,21 @@ namespace hotelManagementSystem20.models
         public Reservation()
         {
             this.ReservationDetail = new HashSet<ReservationDetail>();
+            this.ReservationDetail1 = new HashSet<ReservationDetail>();
         }
     
         public int Reservation_Id { get; set; }
         public int client_id { get; set; }
         public System.DateTime DateReservation { get; set; }
         public int nombreChambres { get; set; }
-        public Nullable<int> prixTotale { get; set; }
+        public Nullable<double> prixTotale { get; set; }
         public Nullable<System.DateTime> dateDepart { get; set; }
         public Nullable<System.DateTime> dateArrivee { get; set; }
     
         public virtual client client { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ReservationDetail> ReservationDetail { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ReservationDetail> ReservationDetail1 { get; set; }
     }
 }

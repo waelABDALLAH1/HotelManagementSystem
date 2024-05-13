@@ -10,7 +10,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Supprimer la chambre - Hotel Management System</title>
+    <title>Delete a room - Hotel Management System</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <style>
         .container {
@@ -38,20 +38,18 @@
             margin-bottom: 10px;
         }
 
-        .btn-default {
-            background-color: #5d4733; /* Gray button color */
-            color: #fff; /* White text color */
+        .btn, .btn-default{
+            color: #fff;
+            background-color: #5d4733; /* Standard button color */
             border: none;
             border-radius: 5px;
-            padding: 8px 16px;
+            padding: 8px 5px;
             cursor: pointer;
             transition: background-color 0.3s ease;
             text-decoration: none;
+            display: inline-block; /* Ensures buttons are properly aligned */
+            width: 100px; /* Uniform width for all buttons */
         }
-
-            .btn-default:hover {
-                background-color: #c0a58b; /* Darker gray on hover */
-            }
 
         .btn-danger {
             background-color: #dc3545; /* Red button color */
@@ -65,6 +63,10 @@
             margin-left: 5px;
         }
 
+            .btn-default:hover {
+                background-color: #c0a58b; /* Darker gray on hover */
+            }
+
             .btn-danger:hover {
                 background-color: #c82333; /* Darker red on hover */
             }
@@ -73,17 +75,17 @@
 <body>
 
     <div class="container">
-        <h2>Supprimer la chambre</h2>
+        <h2>Delete this room</h2>
 
         <div>
-            <h4>Êtes-vous sûr de vouloir supprimer cette chambre ?</h4>
+            <h4>Are you sure to delete this room ?</h4>
             <h3>@Model.room_no</h3>
             <div>
                 @using (Html.BeginForm())
                 {
                     @Html.AntiForgeryToken()
-                    <input type="submit" value="Supprimer" class="btn btn-danger" />
-                    @Html.ActionLink("Annuler", "Index", null, new { @class = "btn btn-default" })
+                    <input type="submit" value="Delet" class="btn btn-danger" />
+                    @Html.ActionLink("Cancel", "Index", null, new { @class = "btn btn-default" })
                 }
             </div>
         </div>

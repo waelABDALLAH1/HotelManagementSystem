@@ -9,7 +9,7 @@ namespace hotelManagementSystem20.Controllers
 {
     public class HomeController : Controller
     {
-        HotelManagementSystemEntities3 db = new HotelManagementSystemEntities3();
+        HotelManagementSystemEntities1 db = new HotelManagementSystemEntities1();
 
         // GET: Home
         public ActionResult Index()

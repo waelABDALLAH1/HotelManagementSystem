@@ -11,7 +11,7 @@ namespace hotelManagementSystem20.Controllers
 {
     public class ReservationController : Controller
     {
-        private HotelManagementSystemEntities3 db = new HotelManagementSystemEntities3();
+        private HotelManagementSystemEntities1 db = new HotelManagementSystemEntities1();
         // GET: Reservation
         public ActionResult Index()
         {
@@ -45,7 +45,7 @@ namespace hotelManagementSystem20.Controllers
         }
 
         
-    public ActionResult Add(int roomId, int reservationId)
+    public ActionResult AddRoomToReservation(int roomId, int reservationId)
         {
             // Récupérer les informations nécessaires pour créer une instance de ReservationDetail
             var room = db.room.Find(roomId);
