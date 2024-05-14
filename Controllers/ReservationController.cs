@@ -87,7 +87,17 @@ namespace hotelManagementSystem20.Controllers
         // GET: Reservation/Create
         public ActionResult Create()
         {
+            var clients = db.client.Select(c => new SelectListItem
+            {
+                Value = c.client_id.ToString(), 
+                Text = c.first_name + " " + c.last_name 
+            }).ToList();
+
+       
+            ViewBag.client_id = clients;
+
             return View();
+            
         }
 
         // POST: Reservation/Create
