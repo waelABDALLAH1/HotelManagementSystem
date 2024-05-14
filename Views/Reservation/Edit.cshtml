@@ -2,55 +2,125 @@
 
 @{
     ViewBag.Title = "Modifier la Reservation";
-}
-@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<h2>Modifier la réservation</h2>
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-<div class="form-horizontal">
-    <h4>Reservation</h4>
-    <hr />
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    @Html.HiddenFor(model => model.Reservation_Id)
-    <div class="form-group">
-        @Html.LabelFor(model => model.client_id, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.client_id, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.client_id, "", new { @class = "text-danger" })
-        </div>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modifier la Réservation - Hotel Management System</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <style>
+        .container {
+            background-color: #d6c6b0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            background-color: #f8f9fa; /* Light gray background */
+            font-family: Arial, sans-serif;
+        }
+
+        h2 {
+            color: #46331D; /* Dark brown heading */
+            margin-bottom: 20px;
+        }
+
+        .form-horizontal .control-label {
+            color: #464a4c; /* Label color */
+            font-weight: bold;
+        }
+
+        .form-horizontal .form-control {
+            border: 1px solid #ced4da; /* Border color */
+            border-radius: 5px;
+            padding: 8px;
+        }
+
+        .text-danger {
+            color: #dc3545; /* Red color for error messages */
+        }
+
+        .btn-default {
+            background-color: #5d4733; /* Gray button color */
+            color: #fff; /* White text color */
+            border: none;
+            border-radius: 5px;
+            padding: 8px 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+        }
+
+            .btn-default:hover {
+                background-color: #c0a58b; /* Darker gray on hover */
+            }
+
+        .btn-back {
+            color: #5d4733; /* Blue color for back link */
+            text-decoration: none;
+            margin-top: 10px;
+            display: inline-block;
+        }
+
+            .btn-back:hover {
+                text-decoration: underline; /* Underline on hover */
+            }
+
+        .action-links a {
+            margin-right: 10px;
+            color: #5d4733;
+            text-decoration: none;
+        }
+
+            .action-links a:hover {
+                text-decoration: underline;
+            }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Edit the booking</h2>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-horizontal">
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.Reservation_Id)
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.client_id, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.client_id, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.client_id, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.nombreChambres, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.nombreChambres, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.nombreChambres, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Save" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+        }
+        <p class="action-links">
+            @Html.ActionLink("Back to the list", "Index")
+        </p>
     </div>
 
-
-
-   
-
-
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.nombreChambres, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.nombreChambres, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.nombreChambres, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-
-
-
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Enregistrer" class="btn btn-default" />
-        </div>
-    </div>
-
-</div>
-
-
-
-}
-<div>
-    @Html.ActionLink("Retour à la liste", "Index")
-</div>
+</body>
+</html>

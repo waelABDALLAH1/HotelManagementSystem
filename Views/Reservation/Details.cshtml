@@ -1,53 +1,103 @@
 ﻿@model hotelManagementSystem20.models.Reservation
+
 @{
-    ViewBag.Title = "Details de Reservation";
-}
-@{
+    ViewBag.Title = "Détails de la Réservation";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Détails du Reservation</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détails de la Réservation - Hotel Management System</title>
+    <style>
+        .container {
+            margin: 20px;
+            background-color: #d6c6b0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
 
+        body {
+            background-color: #f8f9fa; /* Light gray background */
+            font-family: Arial, sans-serif;
+        }
 
-<div>
-    <h4>Reservation</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Reservation_Id)
-        </dt>
-        <dd>
-            @Html.DisplayNameFor(model => model.Reservation_Id)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.client_id)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.client_id)
-        </dd>
-        
-       
+        h2 {
+            color: #46331D; /* Dark brown heading */
+            margin-bottom: 20px;
+        }
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DateReservation)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.DateReservation)
-        </dd>
+        .dl-horizontal dt {
+            float: left;
+            width: auto; /* Adjusted for inline display */
+            clear: left;
+            text-align: left;
+            font-weight: bold;
+            color: #464a4c;
+            margin-right: 10px; /* Space between title and answer */
+        }
 
-        <dt>
-            @Html.DisplayNameFor(model => model.nombreChambres)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.nombreChambres)
-        </dd>
+        .dl-horizontal dd {
+            margin-left: 120px; /* Adjusted spacing */
+            margin-bottom: 10px; /* Space between lines */
+        }
 
-       
+        .btn-primary {
+            background-color: #9a7a43; /* Blue button color */
+            color: #fff; /* White text color */
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+        }
 
-    </dl>
-</div>
+            .btn-primary:hover {
+                background-color: #9a7a43; /* Darker blue on hover */
+            }
 
-<p>
-    @Html.ActionLink("Modifier", "Edit", new { id = Model.Reservation_Id }) |
-    @Html.ActionLink("Retour à la liste", "Index")
-</p>
+        .btn-default {
+            background-color: #5d4733; /* Gray button color */
+            color: #fff; /* White text color */
+            border: none;
+            border-radius: 5px;
+            padding: 8px 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+        }
+
+            .btn-default:hover {
+                background-color: #c0a58b; /* Darker gray on hover */
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Details of the Booking</h2>
+        <div>
+            <h4>Booking</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>Reservation ID:</dt>
+                <dd>@Html.DisplayFor(model => model.Reservation_Id)</dd>
+                <dt>Client ID:</dt>
+                <dd>@Html.DisplayFor(model => model.client_id)</dd>
+                <dt>Reservation Date:</dt>
+                <dd>@Html.DisplayFor(model => model.DateReservation)</dd>
+                <dt>Number of Rooms:</dt>
+                <dd>@Html.DisplayFor(model => model.nombreChambres)</dd>
+            </dl>
+        </div>
+
+        <div>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.Reservation_Id }, new { @class = "btn btn-primary" })
+            @Html.ActionLink("Back to the list", "Index", null, new { @class = "btn btn-default" })
+        </div>
+    </div>
+</body>
+</html>
